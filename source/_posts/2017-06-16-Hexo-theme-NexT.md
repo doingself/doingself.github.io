@@ -1,10 +1,12 @@
+
 ---
 title: 使用 Hexo - NexT 主题
 date: 2017-06-16 16:58:55
-categories:  #文章分類目錄 可以省略
+categories:
 	- Hexo
-tags: #文章標籤 可以省略
+tags:
 	- Hexo
+	- 其他
 description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
 ---
 
@@ -105,8 +107,116 @@ description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
 
 
 
+## 其他配置
 
+### 添加标签页面
 
+1. 新建页面
+
+	执行命令：
+
+	```
+	cd myBlog
+	hexo new page tags
+	```
+
+	输入命令后，在myBlog/source下会新生成一个新的文件夹tags，在该文件夹下会有一个index.md文件。
+2. 设置页面类型
+
+	在myBlog/source/tags/index.md中添加type: "tags"
+
+3. 设置文章的tags
+
+	当要为某一篇文章添加标签，只需在myBlog/source/_post目录下的具体文章的tags中添加标签即可 
+
+	```
+	---
+	title: 使用 Hexo - NexT 主题
+	date: 2017-06-16 16:58:55
+	categories: 
+		- Hexo
+	tags:  [Hexo, 其他]
+	description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
+	---
+	```
+
+### 添加分类页面
+
+1. 新建页面
+
+	执行命令：
+
+	```
+	cd myBlog
+	hexo new page categories
+	```
+
+	输入命令后，在myBlog/source下会新生成一个新的文件夹categories，在该文件夹下会有一个index.md文件。
+
+2. 设置页面类型
+
+	在myBlog/source/categories/index.md中添加type: "categories"
+
+3. 设置文章的 categories
+
+	当要为某一篇文章添加分类，只需在myBlog/source/_post目录下的具体文章的categories中添加分类即可
+
+	```
+	---
+	title: 使用 Hexo - NexT 主题
+	date: 2017-06-16 16:58:55
+	categories: 
+		- Hexo
+	tags:  [Hexo, 其他]
+	description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
+	---
+	```
+
+### 添加关于我页面
+
+1. 新建页面
+
+	```
+	cd myBlog
+	hexo new page about
+	```
+
+	输入命令后，在myBlog/source下会新生成一个新的文件夹about，在该文件夹下会有一个index.md文件。
+
+2. 修改about/index.md
+
+	```
+	---
+	title: about
+	date: 2016-11-15 19:08:50
+	---
+	## 关于我
+
+	```
+
+### 添加站内搜索
+
+NexT主题支持集成 Swiftype、 微搜索、Local Search 和 Algolia,Swiftype和Algolia都只有一段时间的试用期，可以采用Hexo提供的Local Search,原理是通过hexo-generator-search插件在本地生成一个search.xml文件，搜索的时候从这个文件中根据关键字检索出相应的链接。
+
+1. 安装 hexo-generator-search
+
+	在myBlog执行：`npm install hexo-generator-search --save`
+
+2. 安装 hexo-generator-searchdb
+
+	在myBlog执行：`npm install hexo-generator-searchdb --save`
+
+3. 启用搜索
+	
+	修改站点根目录下 `_config.yml` 文件，增加 `search`
+
+	```
+	search:
+		  path: search.xml
+		  field: post
+		  format: html
+		  limit: 10000
+	```
 
 
 
