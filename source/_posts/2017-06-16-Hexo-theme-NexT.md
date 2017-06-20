@@ -6,7 +6,6 @@ categories:
 	- Hexo
 tags:
 	- Hexo
-	- 其他
 description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
 ---
 
@@ -194,7 +193,7 @@ description: "使用 Hexo - NexT 主题" #你對本頁的描述 可以省略
 
 	```
 
-### 添加站内搜索
+### 添加站内搜索(我失败了)
 
 NexT主题支持集成 Swiftype、 微搜索、Local Search 和 Algolia,Swiftype和Algolia都只有一段时间的试用期，可以采用Hexo提供的Local Search,原理是通过hexo-generator-search插件在本地生成一个search.xml文件，搜索的时候从这个文件中根据关键字检索出相应的链接。
 
@@ -218,5 +217,9 @@ NexT主题支持集成 Swiftype、 微搜索、Local Search 和 Algolia,Swiftype
 		  limit: 10000
 	```
 
+### 添加站内搜索(成功)
+
+	修改主题目录下 `_config.yml` 文件中的 `avatar` 设置成头像的链接地址
+	
 
 
