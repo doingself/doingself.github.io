@@ -1,11 +1,13 @@
+
 ---
-title: Hexo + GitHub
+title: "Hexo + GitHub"
 date: 2017-06-16 16:58:55
-categories:  #文章分類目錄 可以省略
+categories:
+	- 运维
+tags:
 	- Hexo
-tags: #文章標籤 可以省略
-	- Hexo
-description: "Hexo + GitHub" #你對本頁的描述 可以省略
+	- GitHub
+description: "Hexo + GitHub 搭建自己的个人博客"
 ---
 
 
