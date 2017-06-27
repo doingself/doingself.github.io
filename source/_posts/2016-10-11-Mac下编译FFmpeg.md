@@ -1,14 +1,16 @@
 ---
-title: Mac编译FFmpeg
+title: Mac下编译FFmpeg
 date: 2016-10-11 22:33:44
 categories:
 	- 多媒体
 tags:
 	- FFmpeg
-description: "Mac编译FFmpeg"
+description: "Mac下编译FFmpeg"
 ---
 
-# Mac编译FFmpeg
+# Mac下编译FFmpeg
+
+IOS App开发中，将要使用视频播放器（好像是kmplayer），后来使用了ijkplayer，但还是总结下在Mac上FFmpeg编译经历
 
 `FFmpeg` 是一套可以用来记录、转换数字音频、视频，并能将其转化为流的开源计算机程序。采用LGPL或GPL许可证。它提供了录制、转换以及流化音视频的完整解决方案。
 

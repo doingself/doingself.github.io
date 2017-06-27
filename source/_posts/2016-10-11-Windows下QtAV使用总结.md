@@ -1,5 +1,5 @@
 ---
-title: Windows 使用 QtAV
+title: Windows下QtAV使用总结
 date: 2016-10-11 22:33:44
 categories:
 	- C/C++/Qt
@@ -8,14 +8,14 @@ tags:
 description: "QtAV"
 ---
 
-# Windows 使用 QtAV
+# Windows下QtAV使用总结
 
 参考[ubuntu上编译、安装，测试](http://blog.csdn.net/iloveqt5/article/details/38128867)
 
 ## 准备工作
 
 + 先集成 Qt开发环境
-+ 配置 FFmpeg(Dev)
++ 配置 FFmpeg(Dev) （可以查看我的博客《Windows下配置FFmpeg》）
 + 配置 portaudio 我没有配置
 + 在 GitHub 下载 [QtAV](https://github.com/wang-bin/QtAV)
 
