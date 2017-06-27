@@ -3,41 +3,46 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 学不可以已
-subtitle: 学不可以已
-description: 不积跬步，无以至千里；不积小流，无以成江海。
-author: 史彦超
-language: zh-Hans
-timezone:
+title: 学不可以已 #网站标题
+subtitle: 史彦超的博客 #网站副标题
+description: 不积跬步，无以至千里；不积小流，无以成江海。 #网站描述
+author: 史彦超 #您的名字
+language: zh-Hans #网站使用的语言
+timezone:  #网站时区。Hexo 默认使用您电脑的时区
 
 # URL
+## 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，则请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+# url: http://yoursite.com
+# root: /
+# permalink: :year/:month/:day/:title/
+# permalink_defaults:
+url: https://doingself.github.io/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/ #生成文件名字的格式
 permalink_defaults:
 
 # Directory
-source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
-i18n_dir: :lang
-skip_render:
+source_dir: source #源文件夹，这个文件夹用来存放内容。
+public_dir: public #公共文件夹，这个文件夹用于存放生成的站点文件。
+tag_dir: tags #标签文件夹
+archive_dir: archives  #归档文件夹
+category_dir: categories #分类文件夹
+code_dir: downloads/code #include code 文件夹
+i18n_dir: :lang #国际化（i18n）文件夹
+skip_render:  #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
 
 # Writing
 new_post_name: :title.md # File name of new posts
-default_layout: post
+default_layout: post # 默认布局
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
-filename_case: 0
-render_drafts: false
-post_asset_folder: true
-relative_link: false
-future: true
-highlight:
+filename_case: 0  #转换文件名，1代表小写；2代表大写；默认为0，意思就是创建文章的时候，是否自动帮你转换文件名，默认就行，意义不大。
+render_drafts: false #是否渲染_drafts目录下的文章，默认为false
+post_asset_folder: true #启动 Asset 文件夹
+relative_link: false #把链接改为与根目录的相对位址，默认false
+future: true #显示未来的文章，默认false
+highlight: #代码块的设置 
   enable: true
   line_number: true
   auto_detect: false
@@ -57,8 +62,8 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: page
+per_page: 10 #每页显示的文章量 (0 = 关闭分页功能)
+pagination_dir: page #分页目录
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
