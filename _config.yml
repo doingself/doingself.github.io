@@ -19,7 +19,7 @@ timezone:  #网站时区。Hexo 默认使用您电脑的时区
 # permalink_defaults:
 url: https://doingself.github.io/
 root: /
-permalink: :title/ #生成文件名字的格式
+permalink: :year/:title/ #生成文件名字的格式
 permalink_defaults:
 
 # Directory

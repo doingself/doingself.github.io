@@ -2,7 +2,7 @@
 title: Jekyll + GitHub
 date: 2016-10-11 22:33:44
 categories:
-	- 运维
+	- Web
 tags:
 	- Jekyll
 	- GitHub

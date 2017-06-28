@@ -4,7 +4,6 @@ date: 2016-10-11 22:33:44
 categories:
 	- Linux
 tags:
-	- Linux
 	- VirtualBox
 description: "Oracle VM VirtualBox 安装 Centos7"
 copyright: true
