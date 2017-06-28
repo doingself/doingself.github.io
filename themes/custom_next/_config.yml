@@ -142,8 +142,13 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
+# social:
+#   LinkLabel: Link
+social:
+  GitHub: https://github.com/doingself
+  开源中国: https://my.oschina.net/asjoker
+  Weibo: http://weibo.com/asjoker
+  QQ: https://user.qzone.qq.com/623971951/main
 
 
 # Social Links Icons
@@ -158,6 +163,9 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  开源中国: bookmark
+  QQ: qq
+  Wechat: wechat
 
 
 # Sidebar Avatar
@@ -343,14 +351,16 @@ changyan:
 # Warning: Baidu Share does not support https.
 #baidushare:
 ##  type: button
+baidushare:
+  type: button
 
 # Share
-#jiathis:
+# jiathis: 
 # Warning: JiaThis does not support https.
 #add_this_id:
 
 # Share
-#duoshuo_share: true
+# duoshuo_share: true
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
@@ -506,7 +516,7 @@ use_motion: true
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
@@ -631,3 +641,7 @@ images: images
 
 # Theme version
 version: 5.1.1
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
