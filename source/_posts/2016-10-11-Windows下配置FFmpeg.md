@@ -6,6 +6,7 @@ categories:
 tags:
 	- FFmpeg
 description: "Windows下配置FFmpeg"
+copyright: true
 ---
 
 # Windows下配置FFmpeg

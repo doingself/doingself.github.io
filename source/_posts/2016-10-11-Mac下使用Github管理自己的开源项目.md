@@ -6,6 +6,7 @@ categories:
 tags:
 	- GitHub
 description: "Mac下使用Github管理自己的开源项目"
+copyright: true
 ---
 
 # Mac下使用Github管理自己的开源项目
@@ -49,5 +50,3 @@ description: "Mac下使用Github管理自己的开源项目"
 + 最下面有个 `Danger Zone` 表格 ，选择 `Delete this repository`
 + 在弹出的对话框中输入要删除的`repository名称`
 + 点击 `I understand the consequences, delete this repository`
-
-

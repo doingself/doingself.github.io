@@ -6,6 +6,7 @@ categories:
 tags:
 	- PL/SQL
 description: "PL/SQL Developer使用技巧"
+copyright: true
 ---
 
 # PL/SQL Developer使用技巧

@@ -6,6 +6,7 @@ categories:
 tags:
 	- CocoaPods
 description: "CocoaPods安装及使用"
+copyright: true
 ---
 
 # CocoaPods
@@ -125,8 +126,6 @@ pod 是声明指定依赖的方法
 
 ---
 
-
-参考 [code4app cocoapods](http://code4app.com/article/cocoapods-install-usage)
-
-参考 [Podfile Syntax Reference](http://guides.cocoapods.org/syntax/podfile.html#plugin)
-
+参考的文章
+1. http://code4app.com/article/cocoapods-install-usage
+2. http://guides.cocoapods.org/syntax/podfile.html#plugin

@@ -5,7 +5,8 @@ categories:
 	- C/C++/Qt
 tags:
 	- QtAV
-description: "QtAV"
+description: "Windows下QtAV使用总结"
+copyright: true
 ---
 
 # Windows下QtAV使用总结

@@ -7,6 +7,7 @@ tags:
 	- Jekyll
 	- GitHub
 description: "Jekyll + GitHub"
+copyright: true
 ---
 
 # Github
@@ -117,5 +118,3 @@ Operation not permitted - /usr/bin/listen
 8. sudo gem install jekyll -n /usr/local/bin
 
 9. 安装成功
-
-

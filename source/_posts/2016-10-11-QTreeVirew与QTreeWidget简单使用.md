@@ -7,6 +7,7 @@ tags:
 	- QTreeVirew
 	- QTreeWidget
 description: "QTreeVirew 与 QTreeWidget 简单使用"
+copyright: true
 ---
 
 # Qt QTreeVirew 与 QTreeWidget 简单使用

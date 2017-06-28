@@ -7,6 +7,7 @@ tags:
 	- Linux
 	- VirtualBox
 description: "Oracle VM VirtualBox 安装 Centos7"
+copyright: true
 ---
 
 # Oracle VM VirtualBox 安装 Centos7

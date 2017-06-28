@@ -7,6 +7,7 @@ tags:
 	- App Store
 	- DUNS
 description: "AppleDeveloper 注册及DUNS编码申请"
+copyright: true
 ---
 
 
@@ -58,6 +59,3 @@ description: "AppleDeveloper 注册及DUNS编码申请"
 
 13. 点击邮件链接，进如 `member center` ，apple developer 注册完成
 	![image](2016-10-11-AppleDeveloper-注册及DUNS编码申请/appdevelop12.jpeg)
-
-
-

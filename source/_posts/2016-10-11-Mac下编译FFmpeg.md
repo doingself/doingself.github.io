@@ -6,6 +6,7 @@ categories:
 tags:
 	- FFmpeg
 description: "Mac下编译FFmpeg"
+copyright: true
 ---
 
 # Mac下编译FFmpeg

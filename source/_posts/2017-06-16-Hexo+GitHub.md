@@ -3,11 +3,12 @@
 title: "Hexo + GitHub"
 date: 2017-06-16 16:58:55
 categories:
-	- 运维
+	- Web
 tags:
 	- Hexo
 	- GitHub
 description: "Hexo + GitHub 搭建自己的个人博客"
+copyright: true
 ---
 
 
@@ -223,5 +224,6 @@ hexo --cwd /path/to/cwd
 
 ---
 
-参考[hexo](https://hexo.io/zh-cn/docs/setup.html)
-参考[zhihu](https://www.zhihu.com/question/21193762)
+参考的文章
+1. https://hexo.io/zh-cn/docs/setup.html
+2. https://www.zhihu.com/question/21193762

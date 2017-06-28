@@ -8,6 +8,7 @@ tags:
 	- 插件
 	- Markdown
 description: "Sublime Text 的 Markdown 插件 Markdown Preview "
+copyright: true
 ---
 
 # Sublime Text 的 Markdown 插件 Markdown Preview

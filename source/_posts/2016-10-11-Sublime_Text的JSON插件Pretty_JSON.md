@@ -8,6 +8,7 @@ tags:
 	- 插件
 	- JSON
 description: "Sublime Text的JSON插件Pretty JSON"
+copyright: true
 ---
 
 # Sublime Text的JSON插件Pretty JSON
@@ -32,4 +33,5 @@ description: "Sublime Text的JSON插件Pretty JSON"
 
 ---
 
-[参考CSDN](http://blog.csdn.net/yanzi1225627/article/details/50703942)
+参考的文章
+1. http://blog.csdn.net/yanzi1225627/article/details/50703942

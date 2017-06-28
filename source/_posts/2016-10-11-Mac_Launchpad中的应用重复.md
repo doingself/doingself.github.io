@@ -6,6 +6,7 @@ categories:
 tags:
 	- Launchpad
 description: "Launchpad 中的应用重复"
+copyright: true
 ---
 
 # Launchpad 中的应用重复
@@ -20,4 +21,3 @@ description: "Launchpad 中的应用重复"
 + 输入 `killall Dock`
 + 回车
 + 重新拖拽你的应用到 Launchpad
-

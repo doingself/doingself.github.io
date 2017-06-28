@@ -8,6 +8,7 @@ tags:
 	- RTMP
 	- RTSP
 description: "视频测试地址"
+copyright: false
 ---
 
 ## RTMP协议直播源

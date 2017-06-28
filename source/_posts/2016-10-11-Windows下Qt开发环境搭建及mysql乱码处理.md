@@ -7,6 +7,7 @@ tags:
 	- Qt
 	- MySql
 description: "Windows下Qt开发环境搭建及mysql乱码处理"
+copyright: true
 ---
 
 # window10 + Qt5.8 + MySql

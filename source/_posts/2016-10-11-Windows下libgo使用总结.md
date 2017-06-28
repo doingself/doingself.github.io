@@ -6,6 +6,7 @@ categories:
 tags:
 	- libgo
 description: "libgo使用总结"
+copyright: true
 ---
 
 # Windows下libgo使用总结
