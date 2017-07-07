@@ -3,7 +3,7 @@ title: 键盘遮挡UITableViewCell中的文本框
 date: 2016-10-11 22:33:44
 categories:
 	- IOS
-    - Swift
+	- Swift
 tags:
 	- 键盘遮挡
 description: "键盘遮挡UITableViewCell中的文本框"

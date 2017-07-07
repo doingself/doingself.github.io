@@ -2,7 +2,7 @@
 title: UITapGestureRecognizer 和 UIBarButtonItem.action 事件冲突
 date: 2016-10-11 22:33:44
 categories:
-	- IOS
+    - IOS
     - Swift
 tags:
 	- UIGestureRecognizerDelegate

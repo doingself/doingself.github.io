@@ -2,8 +2,8 @@
 title: UIControlEvents 个人总结
 date: 2016-10-11 22:33:44
 categories:
-	- IOS
-	- Swift
+    - IOS
+    - Swift
 tags:
 	- UIControlEvents
 description: "UIControlEvents 个人总结"
