@@ -48,6 +48,10 @@ highlight: #代码块的设置
   line_number: true
   auto_detect: false
   tab_replace:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9ef1958cbc4498fd416bfc2a5def7b488d23038c
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -86,9 +90,4 @@ deploy:
   type: git
   repo: https://github.com/doingself/doingself.github.io.git
   branch: master
-
-# search:
-#     path: search.xml
-#     field: post
-#     format: html
-#     limit: 10000
+  
