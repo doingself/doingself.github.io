@@ -19,7 +19,7 @@ timezone:  #网站时区。Hexo 默认使用您电脑的时区
 # permalink_defaults:
 url: https://doingself.github.io/
 root: /
-permalink: :year/:title/ #生成文件名字的格式
+permalink: :year/:month/:day/:title/ #生成文件名字的格式
 permalink_defaults:
 
 # Directory
@@ -33,7 +33,8 @@ i18n_dir: :lang #国际化（i18n）文件夹
 skip_render:  #跳过指定文件的渲染，您可使用 glob 表达式来匹配路径。
 
 # Writing
-new_post_name: :year-:month-:day-:title.md # File name of new posts
+#new_post_name: :year-:month-:day-:title.md # File name of new posts
+new_post_name: :title.md # File name of new posts
 default_layout: post # 默认布局
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -78,7 +79,7 @@ pagination_dir: page #分页目录
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: next
+theme: hexo-theme-next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
