@@ -7,7 +7,7 @@ title: 学不可以已 #网站标题
 subtitle: 史彦超的博客 #网站副标题
 description: 不积跬步，无以至千里；不积小流，无以成江海。 #网站描述
 author: 史彦超 #您的名字
-language: zh-Hans #网站使用的语言
+language: zh-CN #网站使用的语言
 timezone:  #网站时区。Hexo 默认使用您电脑的时区
 
 # URL
