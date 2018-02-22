@@ -11,6 +11,7 @@ description: "Hexo + GitHub 搭建自己的个人博客"
 copyright: true
 ---
 
+![image](2017-06-16-Hexo+GitHub/image.jpg)
 
 # Hexo + GitHub
 
