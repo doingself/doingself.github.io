@@ -5,3 +5,10 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+
+#hexo
+node_modules/
+scaffolds/
+themes/landscape/
+*.json
