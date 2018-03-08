@@ -38,6 +38,26 @@ svn: E200009: Illegal target for the requested operation
 添加 `force`
 `svn add . --force`
 
+# 忽略文件
+## 全局
+
+配置忽略文件 `vi ~/.subversion/config`
+如果 `.subversion` 目录不存在，请运行 `svn status` 命令，虽然此命令会失败，但是会为你创建所需要的文件。
+找到 `global-ignores` 一行，去掉注释，并编辑
+
+## 单个文件
+
+设置编辑方式 `export SVN_EDITOR=vim`
+终端输入 `svn propedit svn:ignore filename` 使用 vim 打开一个文件,编辑保存
+我操作失败 😂😂😂
+> bogon:RigourWechat syc$ svn propedit svn:ignore project.config.json
+No changes to property 'svn:ignore' on 'project.config.json'
+bogon:RigourWechat syc$ svn propedit svn:ignore project.config.json
+svn: E200009: Cannot set 'svn:ignore' on a file ('/Users/syc/Documents/svn/01源代码/RigourWechat/project.config.json')
+
+
+
+
 # 提交
 
 commit 简写为 ci
@@ -48,6 +68,10 @@ commit 简写为 ci
 svn commit -m “提交当前目录下的全部在版本控制下的文件“ 
 svn commit -m “提交我的测试用test.php“ test.php
 ```
+
+# 还原本地修改
+
+`svn revert [-R] filepath` 恢复原始未改变的工作副本文件 filepath可以是准备回滚的文件、目录，如果想把某个目录下的所有文件包括子目录都回滚，加上 `-R` 选项。
 
 # 更新
 

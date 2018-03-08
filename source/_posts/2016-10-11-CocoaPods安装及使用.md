@@ -51,32 +51,29 @@ sudo gem install cocoapods
 pod setup
 ```
 
-
 ## 使用
 
 + 在项目根目录中，使用 Vim 新建一个名为 Podfile 的文件，Podfile的内容是你想导入的类库
-	```
-	cd 项目根目录
+```
+cd 项目根目录
 
-	// 使用 Vim 新建一个名为 Podfile 的文件
-	vim Podfile
+// 使用 Vim 新建一个名为 Podfile 的文件
+vim Podfile
 
-	// 编辑后保存
-	wq
+// 编辑后保存
+wq
 
-	//获取类库
-	pod install
+//获取类库
+pod install
 
-
-
-	//我的Podfile 的文件内容如下：
-	platform :ios, '9.0'
-	inhibit_all_warnings!
-	 
-	target 'cocoDemo' do
-	  pod 'MBProgressHUD', '~> 1.0.0'
-	end
-	```
+//我的Podfile 的文件内容如下：
+platform :ios, '9.0'
+inhibit_all_warnings!
+ 
+target 'cocoDemo' do
+  pod 'MBProgressHUD', '~> 1.0.0'
+end
+```
 
 + 每次更改了 Podfile 文件，你需要重新执行一次 `pod update` 命令。
 + 使用 CocoaPods 生成的 `.xcworkspace` 文件来打开工程，而不是以前的 `.xcodeproj` 文件。
