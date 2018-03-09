@@ -107,6 +107,38 @@ svn　unlock　文件名
 `svn diff file.xxx` 将修改的文件与基础版本比较
 `svn diff -r 200:201 file.xxx` (对版本200和版本201比较差异)
 
+# 解决冲突
+
+更新文件冲突
+
+> bogon:01 syc$ svn update
+> Updating '.':
+> U    xxx/xxx.xx
+> C    aa/aa.json
+> Updated to revision 18403.
+> Summary of conflicts:
+>   Text conflicts: 1
+> Conflict discovered in file 'RigourWechat/app.json'.
+> Select: (p) postpone, (df) show diff, (e) edit file, (m) merge,
+>         (mc) my side of conflict, (tc) their side of conflict,
+>         (s) show all options: p
+> Summary of conflicts:
+>   Text conflicts: 1
+
+```
+输入p：稍后解决，新增3个文件(.mine / .rxxx / .rxxx)
+输入df：显示不同之处；
+输入e：编辑文件；
+输入m：合并文件；
+输入mc，选择我的代码作为最新版本；
+输入tc：选择svn的代码作为最新版本；
+输入s：显示所有选项
+```
+
+如果忘记有哪些冲突，使用 `svn resolve` 查看
+
+解决冲突后执行 `svn resolved file.xxx` 移除工作副本的目录或文件的“冲突”状态. 再次提交.
+
 # 合并
 
 `svn merge -r 200:205 file.xxx` 将版本200与205之间的差异合并到当前文件，但是一般都会产生冲突，需要处理一下
