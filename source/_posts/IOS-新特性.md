@@ -5,7 +5,7 @@ categories:
 	- IOS
 tags:
 	- 新特性
-description: "IOS 各个版本新特性总结"
+description: "IOS 7/8/9/10/11 各版本新特性简单总结"
 copyright: true
 ---
 
@@ -43,7 +43,7 @@ IOS7最大的变化莫过于UI设计
 	+ UIPrinterPickerController类提供一个显示打印机以及选择打印机的界面。打印机由UIPrinter类实例表示。
 	+ 用户可以直接进入app相关的设置界面。
 
-## IOS 9
+## IOS 9 简单总结
 
 1. Xcode7 免证书真机调试
 2. iOS中bitcode是默认YES, enable bitcode 为 NO, bitcode的理解应该是把程序编译成的一种过渡代码，然后苹果再把这个过渡代码编译成可执行的程序。bitcode也允许苹果在后期重新优化我们程序的二进制文件，可以直接理解为APP瘦身。
@@ -53,7 +53,7 @@ IOS7最大的变化莫过于UI设计
 6. UIActionSheet和UIAlertView 过期, 用UIAlertController可以完全替代
 7. statusBar 在vc中的 preferredStatusBarStyle 方法中返回样式
 
-## IOS 10
+## IOS 10 简单总结
 
 1. SiriKit 所有第三方应用都可以用Siri，支持音频、视频、消息发送接收、搜索照片、预订行程、管理锻炼等
 2. 自动管理证书
@@ -69,7 +69,7 @@ IOS7最大的变化莫过于UI设计
 12. UIKit 中废弃了 UILocalNotification UIMutableUserNotificationAction UIMutableUserNotificationCategory UIUserNotificationAction UIUserNotificationCategory UIUserNotificationSettings
 13. 2017年1月1日起苹果强制我们用HTTPS，可以通过NSExceptionDomains来针对特定的域名开放HTTP
 
-## IOS 11
+## IOS 11 简单总结
 
 1. 新增负责简化和集成机器学习的 Core ML
 2. 新增增强现实 (AR) 应用的 ARKit。
@@ -83,4 +83,3 @@ IOS7最大的变化莫过于UI设计
 6. UITableViewDelegate 新增了两个delegate, 主要是实现了TableViewCell的左划和右划手势功能, 为了取代原有的editActionsForRowAtIndexPath
 7. UIViewController 弃用了automaticallyAdjustsScrollViewInsets属性, 这可能使得一些刷新出现头部错乱。
 8. UIScrollView 新增contentInsetAdjustmentBehavior属性替代之前UIViewController的automaticallyAdjustsScrollViewInsets，contentInsetAdjustmentBehavior其实是一个枚举值, 根据某些情况自动调整scrollview的contentInset（实际改变的是adjustedContentInset属性，contentInset属性不会变）
-
