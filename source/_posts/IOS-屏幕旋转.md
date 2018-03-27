@@ -1,14 +1,15 @@
 ---
 title: IOS 屏幕旋转
-date: 2018-03-19 09:29:20
+date: 2016-10-11 22:33:44
 categories:
 	- IOS
+    - Swift
 tags:
 	- 屏幕旋转
-description: "IOS 横竖屏切换 屏幕旋转"
+    - Size Class
+description: "IOS 屏幕旋转"
 copyright: true
 ---
-
 
 详情查看 [我的 GitHub](https://github.com/doingself/IOSadaptation)
 
@@ -116,3 +117,39 @@ UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey:
 ### 方式三
 
 整个 App 竖屏, 特殊页面横屏, 可以结合方式一和方式二, 在特殊页面修改自定义变量 `allowLandscape`
+
+
+# Size Class
+iOS 8在应用界面的可视化设计上添加了一个新的特性 `Size Class`
+
+## 为什么苹果推出 Size Class
++ iPhone3gs-4s : frame直接固定值。
++ iPad : autoresizing —> 根据父控件frame发生改变,子控件跟着一起改变。
++ iPhone5-iPhone5s : autolayout —> 自动布局。
++ iPhone6和iPhone6p : size Class —> 发现屏幕变的太多样化,界面不得不统一。
+
+## Size Class把宽度和高度各分为3种情况
++ `Compact` : 紧凑(小)
++ `Any` : 任意
++ `Regular` : 宽松(大)
+
+![image](IOS-屏幕旋转/image1.jpg)
+
+## 竖屏
+
+![image](IOS-屏幕旋转/image2.jpg)
+
+## 横屏
+
+![image](IOS-屏幕旋转/image3.jpg)
+
+## 什么时候使用SizeClass?
+1. iPhone与iPod通用一个xib或者storyboard
+2. 支持横屏
+
+---
+
+鸣谢
+
++ http://www.cnblogs.com/xubaoaichiyu/archive/2016/04/12/5384491.html
++ http://blog.csdn.net/pz0605/article/details/47315495
