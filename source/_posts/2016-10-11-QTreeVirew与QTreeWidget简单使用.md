@@ -5,8 +5,8 @@ categories:
 	- C/C++/Qt
 tags:
     - Qt
-	- QTreeVirew
-	- QTreeWidget
+    - QTreeVirew
+    - QTreeWidget
 description: "QTreeVirew 与 QTreeWidget 简单使用"
 copyright: true
 ---
