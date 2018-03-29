@@ -4,6 +4,7 @@ date: 2016-10-11 22:33:44
 categories:
 	- C/C++/Qt
 tags:
+    - Qt
 	- QTreeVirew
 	- QTreeWidget
 description: "QTreeVirew 与 QTreeWidget 简单使用"

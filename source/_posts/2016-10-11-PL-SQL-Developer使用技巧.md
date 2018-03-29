@@ -23,13 +23,12 @@ Tools->Preferences->Edit->Other 顺便把Highlight edit line也加上吧。
 
 PL/SQL Developer也可以像其他IDE那样使用自定义快捷键提高编写代码效率，为开发者提供方便。 如我们平时在sql窗口中使用最频繁的 `select from` 我们就可以设置一个快捷键来简化 `select from` 的输入。
 
-1. 建立一个文本文件 `shortcuts.txt`，并写入如下内容：
-	```
-	s = SELECT * FROM
-	w = WHERE 1 = 1 AND
-	sc = SELECT count(*) FROM
-	```
-	另存到 `PL/SQL Developer` 的安装路径下的 `~\PlugIns` 目录下
+1. 建立一个文本文件 `shortcuts.txt`，写入如下内容，并另存到 `PL/SQL Developer` 的安装路径下的 `~\PlugIns` 目录下
+```
+s = SELECT * FROM
+w = WHERE 1 = 1 AND
+sc = SELECT count(*) FROM
+```
 
 2. Tools-->Preferences-->User Interface-->Editor-->AutoReplace，选中`Enable`复选框，然后浏览文件选中之前创建的`shortcuts.txt`，点击`Apply`
 

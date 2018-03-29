@@ -2,7 +2,7 @@
 title: MAC 下使用 SVN
 date: 2018-02-26 16:27:47
 categories:
-	- SVN
+	- 开发工具
 tags:
 	- SVN
 description: 

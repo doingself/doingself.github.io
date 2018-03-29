@@ -6,6 +6,7 @@ categories:
     - Swift
 tags:
     - NSMutableAttributedString
+    - 表情
 description: "将聊天消息中的特殊字符替换为表情图标"
 copyright: true
 ---

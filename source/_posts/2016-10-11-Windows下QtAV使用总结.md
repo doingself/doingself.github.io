@@ -4,6 +4,7 @@ date: 2016-10-11 22:33:44
 categories:
 	- C/C++/Qt
 tags:
+	- Qt
 	- QtAV
 description: "Windows下QtAV使用总结"
 copyright: true

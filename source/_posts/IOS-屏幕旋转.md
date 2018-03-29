@@ -2,7 +2,7 @@
 title: IOS 屏幕旋转
 date: 2016-10-11 22:33:44
 categories:
-	- IOS
+    - IOS
     - Swift
 tags:
     - Size Class

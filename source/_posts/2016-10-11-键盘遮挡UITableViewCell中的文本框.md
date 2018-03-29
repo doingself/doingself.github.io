@@ -5,7 +5,7 @@ categories:
 	- IOS
 	- Swift
 tags:
-	- 键盘遮挡
+	- 键盘
 description: "键盘遮挡UITableViewCell中的文本框"
 copyright: true
 ---
