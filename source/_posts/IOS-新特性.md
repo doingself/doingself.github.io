@@ -10,8 +10,7 @@ copyright: true
 ---
 
 # IOS 新特性
-
-详情查看 [我的 GitHub](https://github.com/doingself/IOSadaptation)
+详情参看我的 [IOSadaptation](https://github.com/doingself/IOSadaptation)
 
 ## IOS7 简单总结
 

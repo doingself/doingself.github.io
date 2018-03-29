@@ -5,15 +5,15 @@ categories:
 	- IOS
     - Swift
 tags:
-	- 屏幕旋转
     - Size Class
+    - landscape
+    - 屏幕旋转
 description: "IOS 屏幕旋转"
 copyright: true
 ---
 
-详情查看 [我的 GitHub](https://github.com/doingself/IOSadaptation)
-
 # 屏幕旋转
+详情参看我的 [IOSadaptation](https://github.com/doingself/IOSadaptation)
 
 ## 方向
 
