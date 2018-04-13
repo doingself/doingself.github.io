@@ -5,6 +5,7 @@ categories:
 	- IOS
 tags:
 	- 新特性
+	- README
 description: "IOS 7/8/9/10/11 各版本新特性简单总结"
 copyright: true
 ---

@@ -8,6 +8,7 @@ tags:
     - Size Class
     - landscape
     - 屏幕旋转
+    - README
 description: "IOS 屏幕旋转"
 copyright: true
 ---
