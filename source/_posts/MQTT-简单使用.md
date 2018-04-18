@@ -78,8 +78,20 @@ bb:123
 
 下载测试工具 http://mqttfx.jensd.de/index.php/download
 
+# 微信小程序测试
+
+小程序中使用 MQTT
+
+现有如下第三方库可供选择:
+
++ https://github.com/tennessine/paho.mqtt.wxapp
++ https://github.com/mqttjs/MQTT.js
++ https://github.com/M2M-IoT/mqtt-chat-wxapp
++ https://github.com/eclipse/paho.mqtt.javascript
+
 # 鸣谢
 
 + mqtt https://blog.csdn.net/qq_28877125/article/details/78325003
 + mosquitto 安装使用 https://my.oschina.net/u/3729363/blog/1595070
 + mosquitto 配置 https://www.cnblogs.com/bluealine/p/8624180.html
++ https://zhuanlan.zhihu.com/p/24823848
