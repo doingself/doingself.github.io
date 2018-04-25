@@ -27,15 +27,14 @@ Nginx (engine x) 是一个高性能的HTTP和反向代理服务器，也是一�
 ## MAC 环境安装
 
 1. 使用 `brew -v` 检查是否安装了 `brew`
-brew常用的命令：
-```
-brew search mysql : 搜索具体的程序包
-brew install mysql : 安装具体的程序包
-brew info mysql : 查看具体程序的信息
-brew uninstall mysql : 卸载具体的应用（这里只是用mysql  作个例子）
-```
-
 2. 使用 `brew install nginx` 安装 `nginx`
+
+### brew常用的命令
+
++ `brew search mysql` 搜索具体的程序包
++ `brew install mysql` 安装具体的程序包
++ `brew info mysql` 查看具体程序的信息
++ `brew uninstall mysql` 卸载具体的应用（这里只是用mysql  作个例子）
 
 ## Windows 环境安装
 
@@ -77,12 +76,9 @@ Or, if you don't want/need a background service you can just run:
   nginx
 ```
 
-
 + `/usr/local/etc/nginx/nginx.conf` 配置文件
 + `/usr/local/var/www` 服务器默认路径
 + `/usr/local/Cellar/nginx/1.xx.xx` 安装路径
-
-
 
 # 使用
 
