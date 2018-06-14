@@ -127,6 +127,75 @@ User user = mapper.readValue(json, User.class);
 System.out.println(user);
 ```
 
+
+# enum 枚举
+
+### 枚举定义
+
+```
+public enum Color {
+    RED("红色", 1), GREEN("绿色", 2), BLANK("白色", 3), YELLO("黄色", 4);
+    // 成员变量
+    private String name;
+    private int index;
+
+    // 构造方法
+    private Color(String name, int index) {
+        this.name = name;
+        this.index = index;
+    }
+
+    // 普通方法
+    public static String getName(int index) {
+        for (Color c : Color.values()) {
+            if (c.getIndex() == index) {
+                return c.name;
+            }
+        }
+        return null;
+    }
+
+    // get set 方法
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+}
+```
+
+### 枚举使用
+
+```
+Color c = Color.GREEN;
+System.out.println(c.toString());
+System.out.println(c.getIndex());
+System.out.println(Color.getName(3));
+c.setName("aa");
+c.setIndex(33);
+System.out.println(c.toString());
+```
+
+结果
+
+```
+super=GREEN i=2 n=绿色
+2
+白色
+super=GREEN i=33 n=aa
+```
+
+
 # 鸣谢
 
 + https://www.cnblogs.com/winner-0715/p/6109225.html
