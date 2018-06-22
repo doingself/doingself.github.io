@@ -283,6 +283,62 @@ public static String doPost(String httpUrl, String param) {
 }
 ```
 
+# IO
+
++ 读入 `InputStream.read`
++ 写出 `OutputStream.write`
+
+### 文件下载 在线打开
+
+```
+File f = new File(filePath);
+if (!f.exists()) {
+    response.sendError(404, "File not found!");
+    return;
+}
+
+// 非常重要
+response.reset();
+
+if (isOnLine) {
+    // 在线打开方式
+    URL u = new URL("file:///" + filePath);
+    response.setContentType(u.openConnection().getContentType());
+    response.setHeader("Content-Disposition", "inline; filename=" + f.getName());
+    // 文件名应该编码成UTF-8
+} else {
+    // 纯下载方式
+    response.setContentType("application/x-msdownload");
+    response.setHeader("Content-Disposition", "attachment; filename=" + f.getName());
+}
+
+OutputStream out = response.getOutputStream();
+
+
+BufferedInputStream br = new BufferedInputStream(new FileInputStream(f));
+byte[] buf = new byte[1024];
+int len = 0;
+while ((len = br.read(buf)) > 0){
+    out.write(buf, 0, len);
+}
+br.close();
+out.close();
+```
+
+
+与 while 的对比
+```
+InputStream fis = new BufferedInputStream(new FileInputStream(path));
+byte[] buffer = new byte[fis.available()];
+fis.read(buffer);
+fis.close();
+
+OutputStream out = response.getOutputStream();
+out.write(buffer);
+out.flush();
+out.close();
+
+```
 
 # 鸣谢
 
