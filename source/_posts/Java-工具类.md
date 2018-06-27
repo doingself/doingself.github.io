@@ -42,7 +42,7 @@ public static String getStringRandom(int length) {
 
 当前毫秒数 `System.currentTimeMillis()`
 
-### 格式化时间
+## 格式化时间
 
 ```
 Date date = new Date();
@@ -51,7 +51,7 @@ String str = sdFormatter.format(date);
 System.out.println(str);
 ```
 
-### 6小时后的时间
+## 6小时后的时间
 
 ```
 Date date = new Date();
@@ -71,14 +71,14 @@ calendar.add(Calendar. DAY_OF_MONTH, 1);
 date = calendar.getTime();
 ```
 
-### 日期转时间戳
+## 日期转时间戳
 
 ```
 System.out.println(Calendar.getInstance().getTimeInMillis());
 System.out.println(new Date().getTime());
 ```
 
-### 时间戳转日期
+## 时间戳转日期
 
 ```
 Date date = new Date(System.currentTimeMillis());
@@ -92,7 +92,7 @@ Jackson提供了一系列注解，方便对JSON序列化和反序列化进行控
 + @JsonFormat 此注解用于属性上，作用是把Date类型直接转化为想要的格式，如@JsonFormat(pattern = "yyyy-MM-dd HH-mm-ss")。
 + @JsonProperty 此注解用于属性上，作用是把该属性的名称序列化为另外一个名称，如把trueName属性序列化为name，@JsonProperty("name")。
 
-### 对象转 JSON
+## 对象转 JSON
 
 ObjectMapper是JSON操作的核心，Jackson的所有JSON操作都是在ObjectMapper中实现。  
 ObjectMapper有多个JSON序列化的方法，可以把JSON字符串保存File、OutputStream等不同的介质中。
@@ -116,7 +116,7 @@ String jsonlist = mapper.writeValueAsString(users);
 System.out.println(jsonlist);
 ```
 
-### JSON 转对象
+## JSON 转对象
 
 ```
 String json = ...
@@ -128,7 +128,7 @@ System.out.println(user);
 
 # enum 枚举
 
-### 枚举定义
+## 枚举定义
 
 ```
 public enum Color {
@@ -172,7 +172,7 @@ public enum Color {
 }
 ```
 
-### 枚举使用
+## 枚举使用
 
 ```
 Color c = Color.GREEN;
@@ -288,7 +288,7 @@ public static String doPost(String httpUrl, String param) {
 + 读入 `InputStream.read`
 + 写出 `OutputStream.write`
 
-### 文件下载 在线打开
+## 文件下载 在线打开
 
 ```
 File f = new File(filePath);
