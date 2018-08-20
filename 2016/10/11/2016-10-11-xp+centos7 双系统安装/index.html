@@ -128,16 +128,16 @@
 <meta property="og:site_name" content="学不可以已">
 <meta property="og:description" content="xp + centos7 双系统安装">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image1.png">
-<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image2.jpeg">
-<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image3.jpeg">
-<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image4.png">
-<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image5.jpeg">
+<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image1.png">
+<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image2.jpeg">
+<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image3.jpeg">
+<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image4.png">
+<meta property="og:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image5.jpeg">
 <meta property="og:updated_time" content="2018-08-05T11:06:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xp + centos7 双系统安装">
 <meta name="twitter:description" content="xp + centos7 双系统安装">
-<meta name="twitter:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/2016-10-11-xp+centos7%20双系统安装/image1.png">
+<meta name="twitter:image" content="https://doingself.github.io/2016/10/11/2016-10-11-xp+centos7%20双系统安装/image1.png">
 
 
 
@@ -431,20 +431,20 @@
 </ul>
 <h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
 <li>先使用<code>分区助手</code>，分一个<code>ext3分区</code>用于存放安装文件，fat32不支持大于4g的文件</li>
-<li><p>使用 <code>Ext2fsd</code> 工具读写<code>ext3分区</code><br> <img src="2016-10-11-xp+centos7 双系统安装/image1.png" alt="image"></p>
+<li><p>使用 <code>Ext2fsd</code> 工具读写<code>ext3分区</code><br> <img src="/2016/10/11/2016-10-11-xp+centos7 双系统安装/image1.png" alt="image"></p>
 </li>
-<li><p>将<code>CentOS.ISO</code>考到准备好的<code>磁盘（ext3）</code>，并将其中的<code>vmlinuz，initrd.img</code>，<br><code>images</code>解压出来。例如将镜像考到<code>H盘</code>，然后将<code>isolinux</code>，<code>images</code>解压到<code>H盘</code>下面。<br> <img src="2016-10-11-xp+centos7 双系统安装/image2.jpeg" alt="image"></p>
+<li><p>将<code>CentOS.ISO</code>考到准备好的<code>磁盘（ext3）</code>，并将其中的<code>vmlinuz，initrd.img</code>，<br><code>images</code>解压出来。例如将镜像考到<code>H盘</code>，然后将<code>isolinux</code>，<code>images</code>解压到<code>H盘</code>下面。<br> <img src="/2016/10/11/2016-10-11-xp+centos7 双系统安装/image2.jpeg" alt="image"></p>
 </li>
-<li><p>使用 <code>grub4dos</code>，解压<code>grub</code>，将里面的<code>grldr、menu.list、grldr.exe</code>拷贝出来,放入到<code>C盘</code>中<br> <img src="2016-10-11-xp+centos7 双系统安装/image3.jpeg" alt="image"></p>
+<li><p>使用 <code>grub4dos</code>，解压<code>grub</code>，将里面的<code>grldr、menu.list、grldr.exe</code>拷贝出来,放入到<code>C盘</code>中<br> <img src="/2016/10/11/2016-10-11-xp+centos7 双系统安装/image3.jpeg" alt="image"></p>
 </li>
 <li><p>编辑 <code>menu.list</code> 文件，在最后添加</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title </span><br><span class="line">install CentOS </span><br><span class="line">kernel (hd0,7)/isolinux/vmlinuz linux repo=hd:/dev/sda8:/ </span><br><span class="line">initrd (hd0,7)/isolinux/initrd.img</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里需注意，(hdX,Y)<br>X为0表示第一块磁盘，如果电脑只有一块磁盘0就是表示这块磁盘<br>Y表示分区，扩展分区从数字4开始，即（sda5），(hd0,4)==sda5==D:,上面的命令也可以手动输入</p>
 </blockquote>
-<p> <img src="2016-10-11-xp+centos7 双系统安装/image4.png" alt="image"></p>
+<p> <img src="/2016/10/11/2016-10-11-xp+centos7 双系统安装/image4.png" alt="image"></p>
 </li>
-<li><p>编辑 <code>boot.ini</code> 文件，首先需要修改属性，默认文件为只读文件，在末尾添加: <code>C:\grldr=&quot;Grub&quot;</code><br> <img src="2016-10-11-xp+centos7 双系统安装/image5.jpeg" alt="image"></p>
+<li><p>编辑 <code>boot.ini</code> 文件，首先需要修改属性，默认文件为只读文件，在末尾添加: <code>C:\grldr=&quot;Grub&quot;</code><br> <img src="/2016/10/11/2016-10-11-xp+centos7 双系统安装/image5.jpeg" alt="image"></p>
 <p> 重新启动，启动时选择<code>Grub</code>，然后选择 <code>install CentOS</code> 接下来就可以安装centos7 了，安装步骤可以参考 <code>Oracle VM VirtualBox 安装 Centos7</code></p>
 </li>
 <li><p>安装完成后，重启电脑发现没有 Windows xp 启动项，centos可以正常启动</p>
