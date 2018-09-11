@@ -10,6 +10,9 @@ description: "class struct 与 json 互转"
 copyright: true
 ---
 
++ `class` 使用 `KVO` 将 JSON(既dictionary)转为 class
++ 实现 `Codable` 协议后 `JSONDecoder` 转换 (`class` 和 `struct` 都可以实现 `Codable` 协议)
+
 ```
 import Foundation
 
@@ -96,6 +99,7 @@ cl.child
 // Any ---> Data ---> String
 // class、struct ---> json
 do{
+    // 此次报错, 程序终止
     let jsonData = try JSONSerialization.data(withJSONObject: cl, options: JSONSerialization.WritingOptions.prettyPrinted)
     let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)
 }catch let err {
