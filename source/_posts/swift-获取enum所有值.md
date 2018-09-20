@@ -1,4 +1,3 @@
-
 ---
 title: "swift 获取enum所有值"
 date: 2018-09-06 22:33:44
@@ -10,6 +9,20 @@ tags:
 description: "获取枚举的所有值"
 copyright: true
 ---
+
+## CaseIterable (2018 09 20 更新)
+```
+enum Beverage: CaseIterable {
+    case coffee, tea, juice
+}
+let numberOfChoices = Beverage.allCases.count
+print("\(numberOfChoices) beverages available")
+// Prints "3 beverages available"
+```
+
+來自 [swift API](https://docs.swift.org/swift-book/LanguageGuide/Enumerations.html)
+
+## EnumCollection (swift4.2失效)
 
 ### 协议
 
