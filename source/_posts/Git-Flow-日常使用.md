@@ -103,6 +103,7 @@ git flow +  init (初始化)
                             |- pull ()
 ```
 
+## 鸣谢
 
 + http://www.cnblogs.com/cnblogsfans/p/5075073.html
 + https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow
