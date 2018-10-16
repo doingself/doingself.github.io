@@ -23,6 +23,8 @@ git-flow 的命令完全可以使用 git 命令代替 (虽然会有点复杂)
 
 ## 安装
 
+See the Wiki for up-to-date [Installation Instructions](https://github.com/nvie/gitflow/wiki/Mac-OS-X).
+
 `brew install git-flow`
 
 ## 初始化
