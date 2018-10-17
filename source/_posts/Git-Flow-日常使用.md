@@ -105,7 +105,21 @@ git flow +  init (初始化)
                             |- pull ()
 ```
 
+### rebase
+
+`git flow feature finish [-rFkDS] <name|nameprefix>` Finish feature <name>
+-r rebase instead of merge
+-F fetch from $ORIGIN before performing finish
+-k keep branch after performing finish
+-D force delete feature branch after finish
+-S squash feature during merge
+
+
+`git flow feature finish XXX` 对 develop 会造成 merge
+`git flow feature finish -r XXX` 避免 merge 使用 -r 进行 rebase
+
 ## 鸣谢
 
 + http://www.cnblogs.com/cnblogsfans/p/5075073.html
 + https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow
++ https://github.com/nvie/gitflow/wiki/Command-Line-Arguments
