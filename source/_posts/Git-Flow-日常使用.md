@@ -109,11 +109,11 @@ git flow +  init (初始化)
 
 `git flow feature finish [-rFkDS] <name|nameprefix>` Finish feature <name>
 
--r rebase instead of merge
--F fetch from $ORIGIN before performing finish
--k keep branch after performing finish
--D force delete feature branch after finish
--S squash feature during merge
+- r rebase instead of merge
+- F fetch from $ORIGIN before performing finish
+- k keep branch after performing finish
+- D force delete feature branch after finish
+- S squash feature during merge
 
 
 `git flow feature finish XXX` 对 develop 会造成 merge   
