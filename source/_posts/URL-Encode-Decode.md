@@ -19,19 +19,50 @@ copyright: true
 
 ### Swift url encode / decode
 
-
 ```
+// encode
 addingPercentEncoding(withAllowedCharacters: CharacterSet)
+// decode
 removingPercentEncoding
 ```
 
 ```
-// encode
-var str = "filename (1)？！@#?!~我.docx"
-var encodeStr = str.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-print(encodeStr ?? "") // filename%20(1)%EF%BC%9F%EF%BC%81%40%23%3F!~%E6%88%91.docx
-// decode
-print(encodeStr?.removingPercentEncoding) // Optional("filename (1)？！@#?!~我.docx")
+let str = "zh（哈！） @#$%^&<*>(en!)end"
+var encodeStr: String!
+
+/*
+* CharacterSet
+* urlHostAllowed: 被转义的字符有  "#%/<>?@\^`\{\|\}
+* urlPathAllowed: 被转义的字符有  "#%;<>?[\]^`\{\|\}
+* urlUserAllowed: 被转义的字符有   #%/<>?@\^`\{\|\}
+* urlQueryAllowed: 被转义的字符有  "#%<>[\]^`\{\|\}
+* urlPasswordAllowed 被转义的字符有 "#%/:<>?@[\]^`\{\|\}
+*/
+
+var hostAllowedSet = CharacterSet.urlHostAllowed
+encodeStr = str.addingPercentEncoding(withAllowedCharacters: hostAllowedSet)!
+print("hostAllowedSet \t\t= \(encodeStr!)")//zh%EF%BC%88%E5%93%88%EF%BC%81%EF%BC%89%20%40%23$%25%5E&%3C*%3E(en!)end
+
+// 对 )! 编码
+hostAllowedSet.remove(charactersIn: ")!")
+encodeStr = str.addingPercentEncoding(withAllowedCharacters: hostAllowedSet)!
+print("remove charactersIn \t= \(encodeStr!)")//zh%EF%BC%88%E5%93%88%EF%BC%81%EF%BC%89%20%40%23$%25%5E&%3C*%3E(en%21%29end
+
+
+// 只对 )! 编码
+let allowedCharacterSet = CharacterSet(charactersIn: ")!").inverted
+encodeStr = str.addingPercentEncoding(withAllowedCharacters: allowedCharacterSet)
+print("CharacterSet charactersIn = \(encodeStr!)")//zh%EF%BC%88%E5%93%88%EF%BC%81%EF%BC%89 @#$%^&<*>(en%21%29end
+
+// c api
+let cfstr = CFURLCreateStringByAddingPercentEscapes(
+    nil,
+    str as CFString,
+    nil,
+    "@)!" as CFString,
+    CFStringBuiltInEncodings.UTF8.rawValue
+)
+print("CFString \t\t\t\t= \(cfstr!)") //zh%EF%BC%88%E5%93%88%EF%BC%81%EF%BC%89%20%40%23$%25%5E&%3C*%3E(en%21%29end
 ```
 
 ### Objective-C url encode
@@ -61,3 +92,4 @@ NSString *encodedStr = (NSString *)CFBridgingRelease(
 
 # 鸣谢
 + https://www.cnblogs.com/luoxiaofu/p/7110011.html
++ https://stackoverflow.com/questions/24551816/swift-encode-url
