@@ -47,8 +47,17 @@ gem sources -l
 ```
 + 在 Terminator（也就是终端）中输入以下命令（注意，本文所有命令都是在终端中输入并运行的）
 ```
-sudo gem install cocoapods
-pod setup
+
+➜  ~ sudo gem install cocoapods
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /usr/bin directory.
+➜  ~ sudo gem install cocoapods -n /usr/local/bin
+Successfully installed cocoapods-1.5.3
+Parsing documentation for cocoapods-1.5.3
+Done installing documentation for cocoapods after 2 seconds
+1 gem installed
+➜  ~ pod setup
+...
 ```
 
 ## 使用
