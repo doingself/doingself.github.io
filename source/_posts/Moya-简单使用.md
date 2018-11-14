@@ -1,5 +1,5 @@
 
-用于将 接口请求数据 转换为对象
+# 用于将 接口请求数据 转换为对象
 
 ```
 struct SYCUser: Codable{
@@ -17,7 +17,7 @@ struct SYCUser: Codable{
 }
 ```
 
-接口定义
+# 接口定义 (EndPoint: TargetType)
 ```
 
 import Foundation
@@ -156,7 +156,12 @@ private let defaultDownloadDestination: DownloadDestination = { (temporaryURL: U
 
 ```
 
-接口请求
+# 接口请求 MoyaProvider
+
++ 登录登出 普通请求
++ 上传
++ 下载
+
 ```
 
 import Foundation
@@ -322,5 +327,24 @@ struct SYCProvider{
             }
         }
     }
+}
+```
+
+# 多个  provider 合并为一个
+```
+enum FirstEndPoint: TargetType{
+    // ...
+    case login(u: String, p: String)
+}
+enum SecondEndPoint: TargetType{
+    // ...
+}
+// target
+let otherProvider = MoyaProvider<FirstEndPoint>()
+let cfProvider = MoyaProvider<SecondEndPoint>()
+// multi target
+let provider = MoyaProvider<MultiTarget>()
+provider.request(MultiTarget(FirstEndPoint.login(u: "u", p: "p"))) { (result) in
+    // ...
 }
 ```
