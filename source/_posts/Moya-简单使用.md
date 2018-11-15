@@ -1,3 +1,19 @@
+---
+title: "Moya 简单使用"
+date: 2018-11-14 12:33:44
+categories:
+    - IOS
+    - Swift
+tags:
+    - readme
+description: "read me"
+copyright: true
+---
+
+
+
+[Moya](https://github.com/Moya/Moya)
+
 
 # 用于将 接口请求数据 转换为对象
 
@@ -347,4 +363,53 @@ let provider = MoyaProvider<MultiTarget>()
 provider.request(MultiTarget(FirstEndPoint.login(u: "u", p: "p"))) { (result) in
     // ...
 }
+```
+
+
+
+# 插件
+
+```
+final class SYCProviderPlugin: PluginType {
+    private let viewController: UIViewController
+    private var activity: UIActivityIndicatorView!
+    let token: String
+    
+    init(viewController: UIViewController, token: String) {
+        self.viewController = viewController
+        self.token = token
+        self.activity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        self.activity.center = self.viewController.view.center
+    }
+    // 准备请求
+    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
+        var request = request
+        request.addValue(token, forHTTPHeaderField: "haha")
+        return request
+    }
+    // 开始请求
+    func willSend(_ request: RequestType, target: TargetType) {
+        self.viewController.view.addSubview(self.activity)
+        self.activity.startAnimating()
+    }
+    // 收到响应
+    func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+        self.activity.removeFromSuperview()
+        self.activity.stopAnimating()
+        
+        guard case let Result.failure(error) = result else { return }
+        print(error.localizedDescription)
+    }
+    // 处理结果
+    func process(_ result: Result<Response, MoyaError>, target: TargetType) -> Result<Response, MoyaError> {
+        
+    }
+}
+```
+
+## 插件使用
+```
+let provider = MoyaProvider<SYCEndPoint>(plugins: [
+    SYCProviderPlugin(viewController: UIViewController(), token: "token")
+])
 ```
