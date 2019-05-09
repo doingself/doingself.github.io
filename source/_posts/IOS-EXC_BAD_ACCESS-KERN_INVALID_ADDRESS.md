@@ -2,14 +2,16 @@
 title: "什么是 EXC_BAD_ACCESS 以及如何调试它"
 date: 2018-09-06 22:33:44
 categories: 
-  - IOS
+	- IOS
 tags:
-  - Crashed
+	- Crashed
 description: "EXC_BAD_ACCESS KERN_INVALID_ADDRESS"
 copyright: true
 ---
 
-由 [巴特雅各布斯](https://tutsplus.com/authors/bart-jacobs?_ga=2.112966724.1797758793.1557374170-2093790351.1557374170) 2015年8月14日
+原文链接: https://code.tutsplus.com/tutorials/what-is-exc_bad_access-and-how-to-debug-it--cms-24544
+
+由 [巴特雅各布斯](https://tutsplus.com/authors/bart-jacobs?_ga=2.112966724.1797758793.1557374170-2093790351.1557374170) 2015年8月14日 发布于 [envatotuts+](https://code.tutsplus.com/tutorials/what-is-exc_bad_access-and-how-to-debug-it--cms-24544)
 
 在某个时刻，您将遇到由EXC_BAD_ACCESS引起的崩溃。在这个快速提示中，您将了解EXC_BAD_ACCESS是什么以及它是由什么引起的。我还将提供一些技巧来修复由EXC_BAD_ACCESS引起的错误。
 
@@ -73,3 +75,5 @@ Xcode会告诉你代码究竟出了什么问题
 
 # 结论
 EXC_BAD_ACCESS是开发人员常见的挫败感，它是手动内存管理所固有的。自引入ARC（自动引用计数）以来，与内存管理相关的问题变得越来越少，但它们绝不会消失。
+
+原文链接: https://code.tutsplus.com/tutorials/what-is-exc_bad_access-and-how-to-debug-it--cms-24544
