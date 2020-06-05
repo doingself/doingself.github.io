@@ -11,6 +11,7 @@ copyright: true
 ---
 
 ![image](2016-10-11-使用UIBezierPath画聊天气泡/image1.jpg)
+![image](2016-10-11-使用UIBezierPath画聊天气泡/image2.jpg)
 
 # 画图
 ```
@@ -27,7 +28,7 @@ bezier.moveToPoint(CGPointMake(w,h-10))
 
 bezier.addArcWithCenter(CGPointMake(w-10, h), radius: 10 , startAngle: 0 , endAngle: CGFloat(M_PI/2)  , clockwise: true)
 
-bezier.addArcWithCenter(CGPointMake(0, h), radius: 10 , startAngle: CGFloat(M_PI*2/3) , endAngle: CGFloat(M_PI)  , clockwise: true)
+bezier.addArcWithCenter(CGPointMake(0, h), radius: 10 , startAngle: CGFloat(M_PI/2) , endAngle: CGFloat(M_PI)  , clockwise: true)
 
 bezier.addArcWithCenter(CGPoint(x: 0, y: 0), radius:10, startAngle: CGFloat(M_PI), endAngle:CGFloat(3 * M_PI / 2), clockwise: true)
 
