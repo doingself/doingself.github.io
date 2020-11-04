@@ -245,6 +245,7 @@ pod lib create SycKit
 - 创建 `git tag 0.0.1`
 - 创建 `git tag -a 1.0.0 -m '标签说明'`
 - 删除 `git tag -d 0.0.1`
+- 删除远端 `git push origin :refs/tags/0.0.1`
 - 推送 `git push --tags`
 
 
@@ -256,6 +257,9 @@ pod lib create SycKit
 `pod spec lint SycKit.podspec --verbose`
 
 `pod spec lint SycKit.podspec --allow-warnings`
+
+出现 `SycKit.podspec passed validation.` 表示校验通过
+
 
 发布到 Trunk
 `pod trunk push SycKit.podspec --allow-warnings`
