@@ -252,17 +252,24 @@ pod lib create SycKit
 
 ### 发布 Trunk
 
-校验 .podspec 文件
-`--verbose` 如果验证失败会报错误信息
-`pod spec lint SycKit.podspec --verbose`
+- 校验 .podspec 文件    
+`--verbose` 如果验证失败会报错误信息    
+`pod spec lint SycKit.podspec --verbose`    
+`pod spec lint SycKit.podspec --allow-warnings`    
+出现 `SycKit.podspec passed validation.` 表示校验通过    
 
-`pod spec lint SycKit.podspec --allow-warnings`
-
-出现 `SycKit.podspec passed validation.` 表示校验通过
-
-
-发布到 Trunk
+- 发布到 Trunk
 `pod trunk push SycKit.podspec --allow-warnings`
+```
+--------------------------------------------------------------------------------
+ 🎉  Congrats
+
+ 🚀  SycKit (0.0.1) successfully published
+ 📅  November 4th, 07:17
+ 🌎  https://cocoapods.org/pods/SycKit
+ 👍  Tell your friends!
+--------------------------------------------------------------------------------
+```
 
 ### 使用
 
