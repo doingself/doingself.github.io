@@ -296,11 +296,17 @@ pod trunk deprecate DYFToast #将 pods 设置为过期
 2. 创建 .podspec 文件
 3. codeing + tag + push
 4. 校验 .podspec 文件
+  - 本地校验   `pod lib lint --allow-warnings`
+  - 远程校验   `pod spec lint --allow-warnings`
 5. 添加一个私有库并和项目地址做绑定 (MyRepo用来 存放所有私有库 各个版本的描述文件)
   `pod repo add MyRepo https://github.com/xxx/xxx.git`
   查看在 Finder 目录`cd ~/.cocoapods/repos`， 可以发现增加了一个 MyRepo 的储存库
   先更新下我们的版本库 `pod repo update MyRepo`
-  向私有的库里添加 .podspec文件 `pod repo push MyRepo xxxx.podspec`
+  推送podspec文件到索引库中
+  `SycKit` 私有源码仓库
+  `SycSpec` 私有索引仓库
+  `pod repo push SycSpec SycKit.podspec --sources=http://xxx/xxx/SycSpec.git`
+
 6. 新建一个项目进行验证
   需要在podfile文件中添加源地址（私人pod库指明你的版本库地址）
 ```
