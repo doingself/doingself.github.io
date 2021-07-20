@@ -220,8 +220,9 @@ hexo --cwd /path/to/cwd
 2. 切换到 hexo 分支
 3. 在根目录依次执行 `npm install hexo`、`npm install` 
 4. 安装`hexo-deployer-git插件`，在根目录运行：`npm install hexo-deployer-git --save`
-5. 在本地对博客进行修改（添加新博文、修改样式等等）后，提交到 hexo 分支
-6. 执行 `hexo g -d` 生成网站并部署到GitHub的master上。
+5. hexo在5.0之后把swig给删除了需要自己手动安装 `npm i hexo-renderer-swig`
+6. 在本地对博客进行修改（添加新博文、修改样式等等）后，提交到 hexo 分支
+7. 执行 `hexo g -d` 生成网站并部署到GitHub的master上。
 
 ---
 
