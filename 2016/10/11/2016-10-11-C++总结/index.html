@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+
+
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32-next.ico?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '6.0.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="语法,C++," />
+
+
+<meta name="description" content="C++ 总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++ 总结">
+<meta property="og:url" content="https://doingself.github.io/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="学不可以已">
+<meta property="og:description" content="C++ 总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-10-11T14:33:44.000Z">
+<meta property="article:modified_time" content="2021-07-20T08:26:51.448Z">
+<meta property="article:author" content="史彦超">
+<meta property="article:tag" content="语法">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+  <link rel="canonical" href="https://doingself.github.io/2016/10/11/2016-10-11-C++总结/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>C++ 总结 | 学不可以已</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学不可以已</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">史彦超的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://doingself.github.io/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学不可以已">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++ 总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-11T22:33:44+08:00">2016-10-11</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C-C-Qt/" itemprop="url" rel="index"><span itemprop="name">C/C++/Qt</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">C++ 总结</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="C-基础"><a href="#C-基础" class="headerlink" title="C++ 基础"></a>C++ 基础</h1><p>C++ 是一种静态类型的、编译式的、通用的、大小写敏感的、不规则的编程语言，支持过程化编程、面向对象编程和泛型编程<br>C++ 是 C 的一个超集，事实上，任何合法的 C 程序都是合法的 C++ 程序。</p>
+<table>
+<thead>
+<tr>
+<th align="center">发布时间</th>
+<th>文档</th>
+<th align="center">通称</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2015</td>
+<td>ISO/IEC TS 19570:2015</td>
+<td align="center">-</td>
+<td>用于并行计算的扩展</td>
+</tr>
+<tr>
+<td align="center">2015</td>
+<td>ISO/IEC TS 18822:2015</td>
+<td align="center">-</td>
+<td>文件系统</td>
+</tr>
+<tr>
+<td align="center">2014</td>
+<td>ISO/IEC 14882:2014</td>
+<td align="center">C++14</td>
+<td>第四个C++标准</td>
+</tr>
+<tr>
+<td align="center">2011</td>
+<td>ISO/IEC TR 24733:2011</td>
+<td align="center">-</td>
+<td>十进制浮点数扩展</td>
+</tr>
+<tr>
+<td align="center">2011</td>
+<td>ISO/IEC 14882:2011</td>
+<td align="center">C++11</td>
+<td>第三个C++标准</td>
+</tr>
+<tr>
+<td align="center">2010</td>
+<td>ISO/IEC TR 29124:2010</td>
+<td align="center">-</td>
+<td>数学函数扩展</td>
+</tr>
+<tr>
+<td align="center">2007</td>
+<td>ISO/IEC TR 19768:2007</td>
+<td align="center">C++TR1</td>
+<td>C++技术报告：库扩展</td>
+</tr>
+<tr>
+<td align="center">2006</td>
+<td>ISO/IEC TR 18015:2006</td>
+<td align="center">-</td>
+<td>C++性能技术报告</td>
+</tr>
+<tr>
+<td align="center">2003</td>
+<td>ISO/IEC 14882:2003</td>
+<td align="center">C++03</td>
+<td>第二个C++标准</td>
+</tr>
+<tr>
+<td align="center">1998</td>
+<td>ISO/IEC 14882:1998</td>
+<td align="center">C++98</td>
+<td>第一个C++标准</td>
+</tr>
+</tbody></table>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>布尔型</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>字符型</td>
+<td>char</td>
+</tr>
+<tr>
+<td>整型</td>
+<td>int</td>
+</tr>
+<tr>
+<td>浮点型</td>
+<td>float</td>
+</tr>
+<tr>
+<td>双浮点型</td>
+<td>double</td>
+</tr>
+<tr>
+<td>无类型</td>
+<td>void</td>
+</tr>
+<tr>
+<td>宽字符型</td>
+<td>wchar_t</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>位</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>char</td>
+<td>1 个字节</td>
+<td>-128 到 127 或者 0 到 255</td>
+</tr>
+<tr>
+<td>unsigned char</td>
+<td>1 个字节</td>
+<td>0 到 255</td>
+</tr>
+<tr>
+<td>signed char</td>
+<td>1 个字节</td>
+<td>-128 到 127</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4 个字节</td>
+<td>-2147483648 到 2147483647</td>
+</tr>
+<tr>
+<td>unsigned int</td>
+<td>4 个字节</td>
+<td>0 到 4294967295</td>
+</tr>
+<tr>
+<td>signed int</td>
+<td>4 个字节</td>
+<td>-2147483648 到 2147483647</td>
+</tr>
+<tr>
+<td>short int</td>
+<td>2 个字节</td>
+<td>-32768 到 32767</td>
+</tr>
+<tr>
+<td>unsigned short int</td>
+<td>2 个字节</td>
+<td>0 到 65,535</td>
+</tr>
+<tr>
+<td>signed short int</td>
+<td>2 个字节</td>
+<td>-32768 到 32767</td>
+</tr>
+<tr>
+<td>long int</td>
+<td>8 个字节</td>
+<td>-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>signed long int</td>
+<td>8 个字节</td>
+<td>-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807</td>
+</tr>
+<tr>
+<td>unsigned long int</td>
+<td>8 个字节</td>
+<td>0 to 18,446,744,073,709,551,615</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 个字节</td>
+<td>+/- 3.4e +/- 38 (~7 个数字)</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8 个字节</td>
+<td>+/- 1.7e +/- 308 (~15 个数字)</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>8 个字节</td>
+<td>+/- 1.7e +/- 308 (~15 个数字)</td>
+</tr>
+<tr>
+<td>wchar_t</td>
+<td>2 或 4 个字节</td>
+<td>个宽字符</td>
+</tr>
+</tbody></table>
+<h2 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h2><p>使用 <code>typedef</code> 为一个已有的类型取一个新的名字。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typedef int feet;</span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enum color &#123; red=3, green, blue &#125; c;</span><br><span class="line">color cc = blue;</span><br><span class="line">cout &lt;&lt; cc &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>可以使用 <code>extern</code> 关键字在任何地方声明一个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">extern int d = 3, f = 5;    // d 和 f 的声明 </span><br><span class="line">int d = 3, f = 5;           // 定义并初始化 d 和 f</span><br></pre></td></tr></table></figure>
+
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><ul>
+<li>使用 <code>#define</code> 预处理器</li>
+<li>使用 <code>const</code> 关键字</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#define LENGTH 10 </span><br><span class="line"></span><br><span class="line">const int  LENGTH = 10;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">double balance[10];</span><br><span class="line">double balance[5] = &#123;1000.0, 2.0, 3.4, 17.0, 50.0&#125;;</span><br><span class="line">double balance[] = &#123;1000.0, 2.0, 3.4, 17.0, 50.0&#125;;</span><br><span class="line">balance[4] = 50.0;</span><br><span class="line">double salary = balance[9];</span><br><span class="line"></span><br><span class="line">// 多维数组</span><br><span class="line">int a[3][4] = &#123;</span><br><span class="line"> &#123;0, 1, 2, 3&#125; ,   /*  初始化索引号为 0 的行 */</span><br><span class="line"> &#123;4, 5, 6, 7&#125; ,   /*  初始化索引号为 1 的行 */</span><br><span class="line"> &#123;8, 9, 10, 11&#125;   /*  初始化索引号为 2 的行 */</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">// if else</span><br><span class="line">// 局部变量声明</span><br><span class="line">int a = 100;</span><br><span class="line"></span><br><span class="line">// 检查布尔条件</span><br><span class="line">if( a &lt; 20 )</span><br><span class="line">&#123;</span><br><span class="line">   // 如果条件为真，则输出下面的语句</span><br><span class="line">   cout &lt;&lt; &quot;a 小于 20&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">   // 如果条件为假，则输出下面的语句</span><br><span class="line">   cout &lt;&lt; &quot;a 大于 20&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// switch</span><br><span class="line">// 局部变量声明</span><br><span class="line">char grade = &#x27;D&#x27;;</span><br><span class="line"></span><br><span class="line">switch(grade)</span><br><span class="line">&#123;</span><br><span class="line">case &#x27;A&#x27; :</span><br><span class="line">  cout &lt;&lt; &quot;很棒！&quot; &lt;&lt; endl; </span><br><span class="line">  break;</span><br><span class="line">case &#x27;B&#x27; :</span><br><span class="line">case &#x27;C&#x27; :</span><br><span class="line">  cout &lt;&lt; &quot;做得好&quot; &lt;&lt; endl;</span><br><span class="line">  break;</span><br><span class="line">default :</span><br><span class="line">  cout &lt;&lt; &quot;无效的成绩&quot; &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; &quot;您的成绩是 &quot; &lt;&lt; grade &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
+
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ul>
+<li><p>break 终止循环，且程序流将继续执行紧接着循环的下一条语句。</p>
+</li>
+<li><p>break 用于终止 switch 语句中的一个 case。</p>
+</li>
+<li><p>continue 会跳过当前循环中的代码，强迫开始下一次循环。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// while 循环执行</span><br><span class="line">int a = 10;</span><br><span class="line">while( a &lt; 20 )</span><br><span class="line">&#123;</span><br><span class="line">   cout &lt;&lt; &quot;a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   a++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// do 循环执行</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line">   cout &lt;&lt; &quot;a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   a = a + 1;</span><br><span class="line">&#125;while( a &lt; 20 );</span><br><span class="line"></span><br><span class="line">// for 循环执行</span><br><span class="line">for( int a = 10; a &lt; 20; a = a + 1 )</span><br><span class="line">&#123;</span><br><span class="line">   cout &lt;&lt; &quot;a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>算术运算符：<code>+  -  *  /  %  ++  --</code></p>
+<ul>
+<li><code>%</code> 取模运算符，整除后的余数</li>
+</ul>
+<p>关系运算符：<code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code><br>逻辑运算符：<code>&amp;&amp;  ||  ！</code><br>位运算符：<code>&amp;  |  ^  ~  &lt;&lt;  &gt;&gt;</code></p>
+<ul>
+<li><code>^</code> 如果存在于其中一个操作数中但不同时存在于两个操作数中，二进制异或运算符复制一位到结果中</li>
+<li><code>~</code> 二进制补码运算符是一元运算符，具有”翻转”位效果，即0变成1，1变成0。</li>
+<li><code>&lt;&lt;</code> 二进制左移运算符，按二进制形式把所有的数字向左移动对应的位数，高位移出(舍弃)，低位的空位补零。左移n位就相当于乘以2的n次方。</li>
+<li><code>&gt;&gt;</code> 二进制右移运算符，按二进制形式把所有的数字向左移动对应的位数，高位移出(舍弃)，低位的空位补零。右移n位相当于除以2的n次方。</li>
+</ul>
+<p>赋值运算符：<code>=  +=  -=  *=  /=  %=  &lt;&lt;=  &gt;&gt;=  &amp;=  ^=  |=</code></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数声明会告诉编译器函数名称及如何调用函数。函数的实际主体可以单独定义。</p>
+<h3 id="传值调用"><a href="#传值调用" class="headerlink" title="传值调用"></a>传值调用</h3><p>传值调用方法，把参数的实际值复制给函数的形式参数。在这种情况下，修改函数内的形式参数不会影响实际参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 声明</span><br><span class="line">int maxNum(int num1, int num2);</span><br><span class="line"></span><br><span class="line">// 传入2个int参数，其中一个有默认值，返回 int</span><br><span class="line">int maxNum(int num1, int num2) </span><br><span class="line">&#123;</span><br><span class="line">   // 局部变量声明</span><br><span class="line">   int result;</span><br><span class="line"> </span><br><span class="line">   if (num1 &gt; num2)</span><br><span class="line">      result = num1;</span><br><span class="line">   else</span><br><span class="line">      result = num2;</span><br><span class="line"> </span><br><span class="line">   return result; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指针调用"><a href="#指针调用" class="headerlink" title="指针调用"></a>指针调用</h3><p>指针调用方法，把参数的地址复制给形式参数。在函数内，该地址用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 函数定义</span><br><span class="line">void swap(int *x, int *y)</span><br><span class="line">&#123;</span><br><span class="line">   int temp;</span><br><span class="line">   temp = *x;   /* 保存地址 x 的值 */</span><br><span class="line">   *x = *y;     /* 把 y 赋值给 x */</span><br><span class="line">   *y = temp;   /* 把 x 赋值给 y */</span><br><span class="line">  </span><br><span class="line">   return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">   // 局部变量声明</span><br><span class="line">   int a = 100;</span><br><span class="line">   int b = 200;</span><br><span class="line"> </span><br><span class="line">   cout &lt;&lt; &quot;交换前，a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; &quot;交换前，b 的值：&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">   /* 调用函数来交换值</span><br><span class="line">    * &amp;a 表示指向 a 的指针，即变量 a 的地址 </span><br><span class="line">    * &amp;b 表示指向 b 的指针，即变量 b 的地址 </span><br><span class="line">    */</span><br><span class="line">   swap(&amp;a, &amp;b);</span><br><span class="line"></span><br><span class="line">   cout &lt;&lt; &quot;交换后，a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; &quot;交换后，b 的值：&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用调用"><a href="#引用调用" class="headerlink" title="引用调用"></a>引用调用</h3><p>引用调用方法，把参数的地址复制给形式参数。在函数内，该引用用于访问调用中要用到的实际参数。这意味着，修改形式参数会影响实际参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// 函数定义</span><br><span class="line">void swap(int &amp;x, int &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">   int temp;</span><br><span class="line">   temp = x; /* 保存地址 x 的值 */</span><br><span class="line">   x = y;    /* 把 y 赋值给 x */</span><br><span class="line">   y = temp; /* 把 x 赋值给 y  */</span><br><span class="line">  </span><br><span class="line">   return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">   // 局部变量声明</span><br><span class="line">   int a = 100;</span><br><span class="line">   int b = 200;</span><br><span class="line"> </span><br><span class="line">   cout &lt;&lt; &quot;交换前，a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; &quot;交换前，b 的值：&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">   /* 调用函数来交换值 */</span><br><span class="line">   swap(a, b);</span><br><span class="line"></span><br><span class="line">   cout &lt;&lt; &quot;交换后，a 的值：&quot; &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; &quot;交换后，b 的值：&quot; &lt;&lt; b &lt;&lt; endl;</span><br><span class="line"> </span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h2><p>C++11 提供了对匿名函数的支持,称为 Lambda 函数(也叫 Lambda 表达式)。<br>Lambda 表达式把函数看作对象。Lambda 表达式可以像对象一样使用，比如可以将它们赋给变量和作为参数传递，还可以像函数一样对其求值。</p>
+<p>在Lambda表达式内可以访问当前作用域的变量，这是Lambda表达式的闭包（Closure）行为。 与JavaScript闭包不同，C++变量传递有传值和传引用的区别。可以通过前面的[]来指定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">[]      // 沒有定义任何变量。使用未定义变量会引发错误。</span><br><span class="line">[x, &amp;y] // x以传值方式传入（默认），y以引用方式传入。</span><br><span class="line">[&amp;]     // 任何被使用到的外部变量都隐式地以引用方式加以引用。</span><br><span class="line">[=]     // 任何被使用到的外部变量都隐式地以传值方式加以引用。</span><br><span class="line">[&amp;, x]  // x显式地以传值方式加以引用。其余变量以引用方式加以引用。</span><br><span class="line">[=, &amp;z] // z显式地以引用方式加以引用。其余变量以传值方式加以引用。</span><br><span class="line">*/</span><br><span class="line">[](int x, int y) -&gt; int &#123; int z = x + y; return z + x; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指针"><a href="#指针" class="headerlink" title="指针 *"></a>指针 <code>*</code></h2><p>每一个变量都有一个内存位置，每一个内存位置都定义了可使用连字号（&amp;）运算符访问的地址，它表示了在内存中的一个地址。</p>
+<p>指针是一个变量，其值为另一个变量的地址，即，内存位置的直接地址。就像其他变量或常量一样，您必须在使用指针存储其他变量地址之前，对其进行声明。<br>通过使用一元运算符 * 来返回位于操作数所指定地址的变量的值</p>
+<p>所有指针的值的实际数据类型，都是一样的，都是一个代表内存地址的长的十六进制数。<br>指针所指向的变量或常量的数据类型不同。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main ()</span><br><span class="line">&#123;</span><br><span class="line">   int  var = 20;   // 实际变量的声明</span><br><span class="line">   int  *ip;        // 指针变量的声明</span><br><span class="line">   int  *ipNull = NULL; // 空指针</span><br><span class="line"></span><br><span class="line">   ip = &amp;var;       // 在指针变量中存储 var 的地址</span><br><span class="line"></span><br><span class="line">   cout &lt;&lt; &quot;var 变量的地址： &quot; &lt;&lt; &amp;var &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; &quot;var 的值: &quot;;</span><br><span class="line">   cout &lt;&lt; var &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">   cout &lt;&lt; &quot;在指针变量中存储的地址: &quot;;</span><br><span class="line">   cout &lt;&lt; ip &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">   cout &lt;&lt; &quot;指针中地址的值: &quot;;</span><br><span class="line">   cout &lt;&lt; *ip &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用-amp"><a href="#引用-amp" class="headerlink" title="引用 &amp;"></a>引用 <code>&amp;</code></h2><ul>
+<li>不存在空引用。引用必须连接到一块合法的内存。</li>
+<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
+<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i = 17;</span><br><span class="line">int &amp;r = i;</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// 预定义的对象 cerr 是 ostream 类的一个实例。cerr 对象附属到标准错误设备，通常也是显示屏，但是 cerr 对象是非缓冲的，且每个流插入到 cerr 都会立即输出。</span><br><span class="line">cerr &lt;&lt; &quot;错误 : cerr&quot; &lt;&lt; endl;</span><br><span class="line">// 预定义的对象 clog 是 ostream 类的一个实例。clog 对象附属到标准错误设备，通常也是显示屏，但是 clog 对象是缓冲的。这意味着每个流插入到 clog 都会先存储在缓冲在，直到缓冲填满或者缓冲区刷新时才会输出。</span><br><span class="line">clog &lt;&lt; &quot;日志 : clog &quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">char name[50];</span><br><span class="line">cout &lt;&lt; &quot;请输入您的名称： &quot;;</span><br><span class="line">// 预定义的对象 cin 是 istream 类的一个实例。cin 对象附属到标准输入设备，通常是键盘。cin 是与流提取运算符 &gt;&gt; 结合使用</span><br><span class="line">cin &gt;&gt; name;</span><br><span class="line">// 预定义的对象 cout 是 ostream 类的一个实例。cout 对象&quot;连接&quot;到标准输出设备，通常是显示屏。cout 是与流插入运算符 &lt;&lt; 结合使用的</span><br><span class="line">cout &lt;&lt; &quot;您的名称是： &quot; &lt;&lt; name &lt;&lt; endl;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据结构（结构体）"><a href="#数据结构（结构体）" class="headerlink" title="数据结构（结构体）"></a>数据结构（结构体）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">void printBook( struct Books book ); // 传值调用</span><br><span class="line">void printBook2(struct Books *book); // 指针调用</span><br><span class="line"></span><br><span class="line">// struct 语句定义了一个包含多个成员的新的数据类型</span><br><span class="line">struct Books</span><br><span class="line">&#123;</span><br><span class="line">   char  title[50];</span><br><span class="line">   int   book_id;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main( )</span><br><span class="line">&#123;</span><br><span class="line">   struct Books Book1;        // 声明 Book1，类型为 Book</span><br><span class="line"></span><br><span class="line">   // Book1 详述</span><br><span class="line">   // strcpy(s1, s2) 复制字符串 s2 到字符串 s1。</span><br><span class="line">   strcpy( Book1.title, &quot;Learn C++ Programming&quot;);</span><br><span class="line">   Book1.book_id = 6495407;</span><br><span class="line"></span><br><span class="line">   // 传值调用 输出 Book1 信息</span><br><span class="line">   printBook( Book1 );</span><br><span class="line">   // 指针调用</span><br><span class="line">   printBook2(&amp;Book1);</span><br><span class="line"></span><br><span class="line">   return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 传值调用</span><br><span class="line">void printBook( struct Books book )</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;Book title : &quot; &lt;&lt; book.title &lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; &quot;Book id : &quot; &lt;&lt; book.book_id &lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">// 指针调用</span><br><span class="line">void printBook2(struct Books *book)&#123;</span><br><span class="line">    cout &lt;&lt; &quot;Book title : &quot; &lt;&lt; book-&gt;title &lt;&lt;endl;</span><br><span class="line">    cout &lt;&lt; &quot;Book id : &quot; &lt;&lt; book-&gt;book_id &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>C++ 在 C 语言的基础上增加了面向对象编程</p>
+<h3 id="类的基本概念"><a href="#类的基本概念" class="headerlink" title="类的基本概念"></a>类的基本概念</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 类定义是以关键字 class 开头，后跟类的名称。</span><br><span class="line"> * 每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。</span><br><span class="line"> */</span><br><span class="line">class Box&#123;</span><br><span class="line">// 默认情况下，类的所有成员都是私有的，私有成员变量或函数在类的外部是不可访问的，甚至是不可查看的。只有类和友元函数可以访问私有成员。</span><br><span class="line">private:</span><br><span class="line">    double *ptr; // 指针</span><br><span class="line">    double length;   // 长度 私有</span><br><span class="line">// 保护成员变量或函数与私有成员十分相似，但有一点不同，保护成员在派生类（即子类）中是可访问的。</span><br><span class="line">protected:</span><br><span class="line">    double breadth;  // 宽度 受保护</span><br><span class="line">// 关键字 public 确定了类成员的访问属性。在类对象作用域内，公共成员在类的外部是可访问的。</span><br><span class="line">public:</span><br><span class="line">    Box(); // 构造函数</span><br><span class="line">    Box(double len); // 构造函数</span><br><span class="line">    Box(const Box &amp;obj); // 拷贝构造函数 obj是一个对象引用，用于初始化另一个对象</span><br><span class="line">    ~Box(); // 析构函数</span><br><span class="line"></span><br><span class="line">    friend void printLength(Box box); //友元函数</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 静态成员</span><br><span class="line">     * 不能把静态成员放置在类的定义中，但是可以在类的外部通过使用范围解析运算符 :: 来重新声明静态变量从而对它进行初始化，</span><br><span class="line">     * 无论创建多少个类的对象，静态成员都只有一个副本。静态成员在类的所有对象中是共享的</span><br><span class="line">     */</span><br><span class="line">    static int objectCount;</span><br><span class="line">    double height;   // 高度</span><br><span class="line">    //成员函数可以定义在类定义内部，或者单独使用范围解析运算符 :: 来定义</span><br><span class="line">    void setLength(double len)&#123;</span><br><span class="line">        length = len;</span><br><span class="line">    &#125;</span><br><span class="line">    double getLength()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;*ptr=len=&quot; &lt;&lt; *ptr &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;length=&quot; &lt;&lt; length &lt;&lt; endl;</span><br><span class="line">        return length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void setBreadth(double wid);</span><br><span class="line">    double getBreadth();</span><br><span class="line">    //返回体积</span><br><span class="line">    double getVolume(void)</span><br><span class="line">    &#123;</span><br><span class="line">        // 每一个对象都能通过 this 指针来访问自己的地址。this 指针是所有成员函数的隐含参数。</span><br><span class="line">        cout &lt;&lt; &quot;getVolume 通过 this 调用 getBreadth = &quot; &lt;&lt; this-&gt;getBreadth() &lt;&lt; endl;</span><br><span class="line">        return this-&gt;length * breadth * height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 类的构造函数是类的一种特殊的成员函数，它会在每次创建类的新对象时执行。</span><br><span class="line"> * 构造函数的名称与类的名称是完全相同的，并且不会返回任何类型，也不会返回 void。构造函数可用于为某些成员变量设置初始值。</span><br><span class="line"> */</span><br><span class="line">Box::Box(void)&#123;</span><br><span class="line">    cout &lt;&lt; &quot;执行 构造函数...&quot; &lt;&lt; endl;</span><br><span class="line">    ptr = new double;</span><br><span class="line">&#125;</span><br><span class="line">// Box::Box(double len) == Box::Box(double len): length(len)</span><br><span class="line">Box::Box(double len)&#123;</span><br><span class="line">    cout &lt;&lt; &quot;执行 带参数的构造函数...&quot; &lt;&lt; endl;</span><br><span class="line">    length = len;</span><br><span class="line">    ptr = new double;</span><br><span class="line">    *ptr = len;</span><br><span class="line"></span><br><span class="line">    // 累加静态成员</span><br><span class="line">    objectCount += 1;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line"> * 拷贝构造函数是一种特殊的构造函数，它在创建对象时，是使用同一类中之前创建的对象来初始化新创建的对象</span><br><span class="line"> * 用于：</span><br><span class="line"> * 1. 通过使用另一个同类型的对象来初始化新创建的对象。</span><br><span class="line"> * 2. 复制对象把它作为参数传递给函数。</span><br><span class="line"> * 3. 复制对象，并从函数返回这个对象。</span><br><span class="line"> *</span><br><span class="line"> * 拷贝构造函数 obj是一个对象引用，用于初始化另一个对象</span><br><span class="line"> */</span><br><span class="line">Box::Box(const Box &amp;obj)&#123;</span><br><span class="line">    cout &lt;&lt; &quot;执行 拷贝构造函数...&quot; &lt;&lt; endl;</span><br><span class="line">    ptr = new double; // 为指针分配内存</span><br><span class="line">    *ptr = *obj.ptr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 析构函数是类的一种特殊的成员函数，它会在每次删除所创建的对象时执行。</span><br><span class="line"> * 析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀，它不会返回任何值，也不能带有任何参数。析构函数有助于在跳出程序（比如关闭文件、释放内存等）前释放资源。</span><br><span class="line"> */</span><br><span class="line">Box::~Box()&#123;</span><br><span class="line">    cout &lt;&lt; &quot;执行 析构函数...&quot; &lt;&lt; endl;</span><br><span class="line">    delete ptr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 成员函数可以定义在类定义内部，或者单独使用 范围解析运算符 :: 来定义</span><br><span class="line">void Box::setBreadth(double wid)&#123;</span><br><span class="line">    breadth = wid;</span><br><span class="line">&#125;</span><br><span class="line">double Box::getBreadth()&#123;</span><br><span class="line">    return breadth;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 类的友元函数是定义在类外部，但有权访问类的所有私有（private）成员和保护（protected）成员。</span><br><span class="line"> * 友元函数并不是成员函数。</span><br><span class="line"> * 友元函数没有 this 指针，因为友元不是类的成员。只有成员函数才有 this 指针。</span><br><span class="line"> * 友元类 = friend class ClassTwo;</span><br><span class="line"> */</span><br><span class="line">void printLength(Box box)&#123;</span><br><span class="line">    // 友元函数直接访问 私有成员</span><br><span class="line">    cout &lt;&lt; &quot;friend box.length=&quot; &lt;&lt; box.length &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 不能把静态成员放置在类的定义中，但是可以在类的外部通过使用范围解析运算符 :: 来重新声明静态变量从而对它进行初始化</span><br><span class="line">int Box::objectCount = 1;</span><br><span class="line">class OtherClass&#123;</span><br><span class="line">public:</span><br><span class="line">    /*</span><br><span class="line">     * C++ 内联函数是通常与类一起使用。</span><br><span class="line">     * 如果一个函数是内联的，那么在编译时，编译器会把该函数的代码副本放置在每个调用该函数的地方。</span><br><span class="line">     * 在类定义中的定义的函数都是内联函数，即使没有使用 inline 说明符。</span><br><span class="line">     */</span><br><span class="line">    inline int getSquare(int num)&#123;</span><br><span class="line">        return num * num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 公有继承（public）：当一个类派生自公有基类时，基类的公有成员也是派生类的公有成员，基类的保护成员也是派生类的保护成员，基类的私有成员不能直接被派生类访问，但是可以通过调用基类的公有和保护成员来访问。</span><br><span class="line"> * 保护继承（protected）： 当一个类派生自保护基类时，基类的公有和保护成员将成为派生类的保护成员。</span><br><span class="line"> * 私有继承（private）：当一个类派生自私有基类时，基类的公有和保护成员将成为派生类的私有成员。</span><br><span class="line"> */</span><br><span class="line">// Box 子类</span><br><span class="line">class SmallBox:public Box, public OtherClass&#123;</span><br><span class="line">public:</span><br><span class="line">    double getArea()&#123;</span><br><span class="line">        return breadth * height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main( )</span><br><span class="line">&#123;</span><br><span class="line">    Box box1(6.0);      // 声明 box1，类型为 Box，执行带参数的构造函数</span><br><span class="line">    box1.height = 5.0;</span><br><span class="line">    box1.setBreadth(7.0);</span><br><span class="line">    double volume = box1.height * box1.getLength() * box1.getBreadth();</span><br><span class="line">    cout &lt;&lt; &quot;box.成员 calculate volume=&quot; &lt;&lt; volume &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;box.getVolume=&quot; &lt;&lt; box1.getVolume() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 使用友元函数</span><br><span class="line">    printLength(box1);</span><br><span class="line"></span><br><span class="line">    Box box2 = box1;</span><br><span class="line">    cout &lt;&lt; &quot;box2.getLength=&quot; &lt;&lt; box2.getLength() &lt;&lt; &quot; end.&quot;&lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    Box box3(1.0);// 目的是 使用构造函数累加 objectCount</span><br><span class="line">    // 静态成员在类的所有对象中是共享的</span><br><span class="line">    cout &lt;&lt; &quot;box.static.objectCount=&quot; &lt;&lt; Box::objectCount &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    SmallBox smallBox;</span><br><span class="line">    smallBox.height=2.0;</span><br><span class="line">    smallBox.setBreadth(3.0);</span><br><span class="line">    smallBox.setLength(4.0);</span><br><span class="line">    cout &lt;&lt; &quot;small box getVolume(box)=&quot; &lt;&lt; smallBox.getVolume() &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;small box getArea(self)=&quot; &lt;&lt; smallBox.getArea() &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;small box getSquare(OtherClass)=&quot; &lt;&lt; smallBox.getSquare(4) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 指向类的指针</span><br><span class="line">    Box *ptrBox;</span><br><span class="line">    // 必须在使用指针之前，对指针进行初始化。</span><br><span class="line">    ptrBox = &amp;box1;</span><br><span class="line">    cout &lt;&lt; &quot;ptrBox.volume&quot; &lt;&lt; ptrBox-&gt;getVolume() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="继承、多态"><a href="#继承、多态" class="headerlink" title="继承、多态"></a>继承、多态</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using  namespace std;</span><br><span class="line"></span><br><span class="line">// 形状</span><br><span class="line">class Shape&#123;</span><br><span class="line">protected:</span><br><span class="line">    double breadth;</span><br><span class="line">    double height;</span><br><span class="line">public:</span><br><span class="line">    // 重载，函数同名，形式参数（指参数的个数、类型或者顺序）不同</span><br><span class="line">    void print(int i)&#123;</span><br><span class="line">        cout &lt;&lt; &quot;print int:&quot; &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    void print(double d)&#123;</span><br><span class="line">        cout &lt;&lt; &quot;print double:&quot; &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    // 重载 + 运算符</span><br><span class="line">    double operator+(const Shape &amp;s)&#123;</span><br><span class="line">        return this-&gt;height + s.height;</span><br><span class="line">    &#125;</span><br><span class="line">    // 重载 ++ 运算符</span><br><span class="line">    double operator++()&#123;</span><br><span class="line">        return ++height;</span><br><span class="line">    &#125;</span><br><span class="line">    // 使用友元函数 重载输出</span><br><span class="line">    friend ostream &amp;operator&lt;&lt;( ostream &amp;output, const Shape &amp;s)&#123;</span><br><span class="line">        output &lt;&lt; &quot;height : &quot; &lt;&lt; s.height &lt;&lt; &quot; breadth : &quot; &lt;&lt; s.breadth;</span><br><span class="line">        return output;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void setHeight(double h);</span><br><span class="line">    double getHeight();</span><br><span class="line">    void setBreadth(double wid);</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 虚函数</span><br><span class="line">     * 多态，子类重写该方法</span><br><span class="line">     * 虚函数 是在基类中使用关键字 virtual 声明的函数。</span><br><span class="line">     * 在派生类中重新定义基类中定义的虚函数时，会告诉编译器不要静态链接到该函数。</span><br><span class="line">     * 如果没有 virtual 关键字，子类始终执行 父类的 area，就是 静态多态，或静态链接 - 函数调用在程序执行前就准备好了。有时候这也被称为早绑定，</span><br><span class="line">     */</span><br><span class="line">    virtual double area()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;执行 Shape.area&quot; &lt;&lt; endl;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    /*</span><br><span class="line">     * 纯虚函数(我理解就是抽象方法)</span><br><span class="line">     * 您可能想要在基类中定义虚函数，以便在派生类中重新定义该函数更好地适用于对象，</span><br><span class="line">     * 但是您在基类中又不能对虚函数给出有意义的实现，这个时候就会用到纯虚函数。</span><br><span class="line">     */</span><br><span class="line">    //virtual double area() = 0;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void Shape::setHeight(double h) &#123;</span><br><span class="line">    height = h;</span><br><span class="line">&#125;</span><br><span class="line">double Shape::getHeight() &#123;</span><br><span class="line">    return height;</span><br><span class="line">&#125;</span><br><span class="line">void Shape::setBreadth(double wid) &#123;</span><br><span class="line">    breadth = wid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 三角形</span><br><span class="line">class Triangle: public Shape&#123;</span><br><span class="line">public:</span><br><span class="line">    double area()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;执行 Triangle.area&quot; &lt;&lt; endl;</span><br><span class="line">        return (breadth * height)/2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 矩形</span><br><span class="line">class Rectangle: public Shape&#123;</span><br><span class="line">public:</span><br><span class="line">    double area()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;执行 Rectangle.area&quot; &lt;&lt; endl;</span><br><span class="line">        return breadth * height;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    Shape shape1;</span><br><span class="line">    // 重载方法</span><br><span class="line">    shape1.print(123);</span><br><span class="line">    shape1.print(1.23);</span><br><span class="line">    // 重载 输出运算符</span><br><span class="line">    cout &lt;&lt; &quot;重载输出：&quot; &lt;&lt; shape1 &lt;&lt; endl;</span><br><span class="line">    shape1.setHeight(11);</span><br><span class="line">    shape1.setBreadth(12);</span><br><span class="line"></span><br><span class="line">    Shape shape2;</span><br><span class="line">    shape2.setHeight(22);</span><br><span class="line"></span><br><span class="line">    double height;</span><br><span class="line">    // 重载 + 运算符</span><br><span class="line">    height = shape1 + shape2;</span><br><span class="line">    cout &lt;&lt; &quot;重载 + 运算符：&quot; &lt;&lt; height &lt;&lt; endl;</span><br><span class="line">    // 重载 ++ 运算符</span><br><span class="line">    cout &lt;&lt; &quot;重载 ++  运算符：&quot; &lt;&lt; ++shape1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 多态</span><br><span class="line">    Shape *shape;</span><br><span class="line">    Triangle triangle;</span><br><span class="line">    Rectangle rectangle;</span><br><span class="line"></span><br><span class="line">    triangle.setBreadth(11);</span><br><span class="line">    triangle.setHeight(12);</span><br><span class="line"></span><br><span class="line">    rectangle.setBreadth(22);</span><br><span class="line">    rectangle.setHeight(23);</span><br><span class="line"></span><br><span class="line">    // 编译器看的是指针的内容，而不是它的类型。</span><br><span class="line">    shape = &amp;rectangle;</span><br><span class="line">    shape-&gt;area();</span><br><span class="line"></span><br><span class="line">    shape = &amp;triangle;</span><br><span class="line">    shape-&gt;area();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><h2 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h2><p>标准库 fstream</p>
+<ul>
+<li><code>ofstream</code> 该数据类型表示输出文件流，用于创建文件并向文件写入信息。</li>
+<li><code>ifstream</code> 该数据类型表示输入文件流，用于从文件读取信息。</li>
+<li><code>fstream</code> 该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。</li>
+</ul>
+<p>open() 成员函数的第一参数指定要打开的文件的名称和位置，第二个参数定义文件被打开的模式。</p>
+<ul>
+<li><code>ios::app</code> 追加模式。所有写入都追加到文件末尾。</li>
+<li><code>ios::ate</code> 文件打开后定位到文件末尾。</li>
+<li><code>ios::in</code> 打开文件用于读取。</li>
+<li><code>ios::out</code> 打开文件用于写入。</li>
+<li><code>ios::trunc</code> 如果该文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    char data[100];</span><br><span class="line"></span><br><span class="line">    ofstream outfile;</span><br><span class="line">    // 以写模式打开文件</span><br><span class="line">    outfile.open(&quot;testFile.txt&quot;);</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Writing to the file&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;1.Enter : &quot;;</span><br><span class="line">    // 获取输入内容</span><br><span class="line">    cin.getline(data,100);</span><br><span class="line"></span><br><span class="line">    // 向文件写入 输入的内容</span><br><span class="line">    outfile &lt;&lt; data &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;2.Enter : &quot;;</span><br><span class="line">    cin &gt;&gt; data;</span><br><span class="line">    cin.ignore();</span><br><span class="line"></span><br><span class="line">    // 向文件写入 输入的内容</span><br><span class="line">    outfile &lt;&lt; data &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 关闭文件</span><br><span class="line">    outfile.close();</span><br><span class="line"></span><br><span class="line">    ifstream infile;</span><br><span class="line">    // 以读模式打开文件</span><br><span class="line">    infile.open(&quot;testFile.txt&quot;);</span><br><span class="line"></span><br><span class="line">    infile &gt;&gt; data;</span><br><span class="line">    cout &lt;&lt; &quot;Reading from the file&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; data &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    infile &gt;&gt; data;</span><br><span class="line">    cout &lt;&lt; data &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 关闭文件</span><br><span class="line">    infile.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;exception&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// 自定义异常</span><br><span class="line">struct MyException: public exception&#123;</span><br><span class="line">    // what() 是异常类提供的一个公共方法，它已被所有子异常类重载。这将返回异常产生的原因。</span><br><span class="line">    const char *what() const throw()&#123;</span><br><span class="line">        return &quot;my exception&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">double division(int a,int b)&#123;</span><br><span class="line">    if(b==0)&#123;</span><br><span class="line">        // 抛出一个异常</span><br><span class="line">        throw &quot;Division by zero condition&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return a/b;</span><br><span class="line">&#125;</span><br><span class="line">int main()&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        division(12,0);</span><br><span class="line">    &#125;catch (const char *msg)&#123;</span><br><span class="line">        cerr &lt;&lt; msg &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    try &#123;</span><br><span class="line">        throw  MyException();</span><br><span class="line">    &#125;catch(MyException &amp;e)&#123;</span><br><span class="line">        std::cout &lt;&lt; e.what() &lt;&lt; std::endl;</span><br><span class="line">    &#125;catch (std::exception &amp;e)&#123;</span><br><span class="line">        std::cout &lt;&lt; e.what() &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    /*</span><br><span class="line">     * 栈：在函数内部声明的所有变量都将占用栈内存。</span><br><span class="line">     * 堆：这是程序中未使用的内存，在程序运行时可用于动态分配内存。</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    // 初始化为 null 的指针</span><br><span class="line">    double* num = NULL;</span><br><span class="line">    // 建议检查 new 运算符是否返回 NULL 指针</span><br><span class="line">    // 使用 new 运算符来为任意的数据类型动态分配内存</span><br><span class="line">    // new 与 malloc() 函数相比，new 不只是分配了内存，它还创建了对象。</span><br><span class="line">    if( !(num = new double))&#123;</span><br><span class="line">        cout &lt;&lt; &quot;error out of memory&quot;;</span><br><span class="line">        exit(1);</span><br><span class="line">    &#125;</span><br><span class="line">    *num = 123.456;</span><br><span class="line">    cout &lt;&lt; &quot;double is &quot; &lt;&lt; *num &lt;&lt; endl;</span><br><span class="line">    // 释放内存</span><br><span class="line">    delete num;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * using 指令也可以用来指定命名空间中的特定项目。</span><br><span class="line"> * 例如，如果您只打算使用 std 命名空间中的 cout 部分</span><br><span class="line"> * std 命名空间中的其他项目仍然需要加上命名空间名称作为前缀</span><br><span class="line"> */</span><br><span class="line">using std::cout;</span><br><span class="line"></span><br><span class="line">// 命名空间，区分不同库中相同名称的函数、类、变量等。命名空间就是定义了一个范围。</span><br><span class="line">namespace firstSpace&#123;</span><br><span class="line">    void print()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;first space print&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">namespace secondSpace&#123;</span><br><span class="line">    void print()&#123;</span><br><span class="line">        cout &lt;&lt; &quot;second space print&quot; &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用 using namespace 指令，在使用命名空间时就可以不用在前面加上命名空间的名称。</span><br><span class="line"> * 这个指令会告诉编译器，后续的代码将使用指定的命名空间中的名称。</span><br><span class="line"> */</span><br><span class="line">using namespace firstSpace;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    // 使用 using namespace 指令，在使用命名空间时就可以不用在前面加上命名空间的名称</span><br><span class="line">    print();</span><br><span class="line">    // 调用带有命名空间的函数或变量，需要在前面加上命名空间的名称</span><br><span class="line">    secondSpace::print();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><h3 id="函数-1"><a href="#函数-1" class="headerlink" title="函数"></a>函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// 函数模板</span><br><span class="line">template &lt;typename T&gt;</span><br><span class="line">inline T const&amp; maxObj(T const&amp; a, T const&amp; b)&#123;</span><br><span class="line">    return a &gt; b ? a:b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    cout &lt;&lt; maxObj(12,23) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; maxObj(&quot;hello&quot;,&quot;world&quot;) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="类-1"><a href="#类-1" class="headerlink" title="类"></a>类</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;cstdlib&gt;</span><br><span class="line">#include &lt;stdexcept&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// 类模板</span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">class Stack&#123;</span><br><span class="line">private:</span><br><span class="line">    vector&lt;T&gt; elems; // 元素</span><br><span class="line">public:</span><br><span class="line">    void push(T const&amp;); // 入栈</span><br><span class="line">    void pop(); // 出栈</span><br><span class="line">    T top() const; // 返回栈 顶元素</span><br><span class="line">    bool empty() const&#123;</span><br><span class="line">        // 是否为空</span><br><span class="line">        return elems.empty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">void Stack&lt;T&gt;::push(T const &amp;elem) &#123;</span><br><span class="line">    // 追加</span><br><span class="line">    elems.push_back(elem);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">void Stack&lt;T&gt;::pop() &#123;</span><br><span class="line">    if (elems.empty())&#123;</span><br><span class="line">        throw out_of_range(&quot;Stack&lt;&gt;::pop() is empty&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 删除最后一个元素</span><br><span class="line">    elems.pop_back();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">template &lt;class T&gt;</span><br><span class="line">T Stack&lt;T&gt;::top() const const&#123;</span><br><span class="line">    if (elems.empty())&#123;</span><br><span class="line">        throw out_of_range(&quot;Stack&lt;&gt;::pop() is empty&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 返回最后一个元素</span><br><span class="line">    return elems.back();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    try&#123;</span><br><span class="line">        Stack&lt;int&gt; intStack;</span><br><span class="line">        Stack&lt;string&gt; stringStack;</span><br><span class="line"></span><br><span class="line">        intStack.push(4);</span><br><span class="line">        cout &lt;&lt; intStack.top() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">        stringStack.push(&quot;hello&quot;);</span><br><span class="line">        cout &lt;&lt; stringStack.top() &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">        stringStack.pop();</span><br><span class="line">        stringStack.pop();</span><br><span class="line">    &#125;catch (exception const&amp; ex)&#123;</span><br><span class="line">        cerr &lt;&lt; &quot;exception info = &quot; &lt;&lt; ex.what() &lt;&lt; endl;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h2><p>预处理器是一些指令，指示编译器在实际编译之前所需完成的预处理。<br>所有的预处理器指令都是以井号（#）开头，只有空格字符可以出现在预处理指令之前。预处理指令不是 C++ 语句，所以它们不会以分号（;）结尾。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">// #define 预处理指令用于创建符号常量。该符号常量通常称为宏</span><br><span class="line">#define DEBUG true</span><br><span class="line">// 定义一个带有参数的宏</span><br><span class="line">#define MIN(a,b) ((a&lt;b)?a: b)</span><br><span class="line">// # 和 ## 预处理运算符在 C++ 和 ANSI/ISO C 中都是可用的。# 运算符会把 replacement-text 令牌转换为用引号引起来的字符串。</span><br><span class="line">#define MKSTR(x) #x</span><br><span class="line"></span><br><span class="line">// ## 运算符用于连接两个令牌。</span><br><span class="line">#define CONCAT(x, y) x ## y</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    </span><br><span class="line">//条件编译</span><br><span class="line">#ifdef DEBUG</span><br><span class="line">    cerr &lt;&lt; &quot;current is debug&quot; &lt;&lt; endl;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">// 可以使用 #if 0 语句注释掉程序的一部分</span><br><span class="line">#if 0</span><br><span class="line">    cout &lt;&lt; &quot;不进行编译的代码&quot; &lt;&lt; endl;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">    // 带参数的宏</span><br><span class="line">    cout &lt;&lt; MIN(22,11) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // # 运算符会把 replacement-text 令牌转换为用引号引起来的字符串。</span><br><span class="line">    cout &lt;&lt; MKSTR(HELLO C++) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // ## 运算符用于连接两个令牌。</span><br><span class="line">    cout &lt;&lt; CONCAT(11, 22) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 预定义宏</span><br><span class="line">    cout &lt;&lt; &quot;当前行号：&quot; &lt;&lt; __LINE__ &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;当前文件名：&quot; &lt;&lt; __FILE__ &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;当前日期：&quot; &lt;&lt; __DATE__ &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;当前时间：&quot; &lt;&lt; __TIME__ &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="信号处理-我的理解是swift中的通知"><a href="#信号处理-我的理解是swift中的通知" class="headerlink" title="信号处理(我的理解是swift中的通知)"></a>信号处理(我的理解是swift中的通知)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;csignal&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">void signalHandler( int signum ) &#123;</span><br><span class="line">    cout &lt;&lt; &quot;Interrupt signal (&quot; &lt;&lt; signum &lt;&lt; &quot;) received.\n&quot;;</span><br><span class="line">    exit(signum);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line">    /*</span><br><span class="line">     * 以下 列信号可以在程序中捕获，并可以基于信号采取适当的动作。这些信号是定义在 C++ 头文件 &lt;csignal&gt; 中。</span><br><span class="line">     * SIGABRT  程序的异常终止，如调用 abort。</span><br><span class="line">     * SIGFPE   错误的算术运算，比如除以零或导致溢出的操作。</span><br><span class="line">     * SIGILL   检测非法指令。</span><br><span class="line">     * SIGINT   接收到交互注意信号。</span><br><span class="line">     * SIGSEGV  非法访问内存。</span><br><span class="line">     * SIGTERM  发送到程序的终止请求。</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * signal 函数，用来捕获突发事件</span><br><span class="line">     * 第一个参数是一个整数，代表了信号的编号；</span><br><span class="line">     * 第二个参数是一个指向信号处理函数的指针。</span><br><span class="line">     */</span><br><span class="line">    signal(SIGINT,signalHandler);</span><br><span class="line"></span><br><span class="line">    int i = 0;</span><br><span class="line">    while(++i)&#123;</span><br><span class="line">        if (i == 3)&#123;</span><br><span class="line">            // 使用函数 raise() 生成信号</span><br><span class="line">            raise(SIGINT);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;pthread.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define  NUM_THREADS 5</span><br><span class="line"></span><br><span class="line">struct ThreadData&#123;</span><br><span class="line">    int threadId;</span><br><span class="line">    char *message;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void* sayHello(void *args)&#123;</span><br><span class="line">    // 对传入的参数进行强制类型转换</span><br><span class="line">    struct ThreadData *threadData;</span><br><span class="line">    threadData = (struct ThreadData*) args;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;hello threadId = &quot; &lt;&lt; threadData-&gt;threadId ;</span><br><span class="line">    cout &lt;&lt; &quot; message = &quot; &lt;&lt; threadData-&gt;message &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 在线程完成工作后无需继续存在时 调用pthread_exit退出线程</span><br><span class="line">    pthread_exit(NULL);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line"></span><br><span class="line">    // 线程的 id 变量，多个变量使用数组</span><br><span class="line">    pthread_t threads[NUM_THREADS];</span><br><span class="line">    struct ThreadData threadData[NUM_THREADS];</span><br><span class="line">    for (int i = 0; i &lt; NUM_THREADS; i++)&#123;</span><br><span class="line">        cout &lt;&lt; &quot;for thread create i = &quot; &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">        threadData[i].threadId = i;</span><br><span class="line">        threadData[i].message = &quot;this is thread message&quot;;</span><br><span class="line"></span><br><span class="line">        /*</span><br><span class="line">         * pthread_create 创建一个新的线程，并让它可执行</span><br><span class="line">         *</span><br><span class="line">         * thread   指向线程标识符指针。</span><br><span class="line">         * attr 一个不透明的属性对象，可以被用来设置线程属性。您可以指定线程属性对象，也可以使用默认值 NULL。</span><br><span class="line">         * start_routine    线程运行函数起始地址，一旦线程被创建就会执行。</span><br><span class="line">         * arg  运行函数的参数。它必须通过把引用作为指针强制转换为 void 类型进行传递。如果没有传递参数，则使用 NULL。</span><br><span class="line">         *</span><br><span class="line">         * 通过结构传递多个参数。您可以在线程回调中传递任意的数据类型，因为它指向 void</span><br><span class="line">         */</span><br><span class="line">        int thread = pthread_create(&amp;threads[i], NULL, sayHello, (void *)&amp;(threadData[i]));</span><br><span class="line">        if (thread != 0 )&#123;</span><br><span class="line">            cout &lt;&lt; &quot;thread create error: &quot; &lt;&lt; thread &lt;&lt; endl;</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    /*</span><br><span class="line">     * pthread_exit 用于显式地退出一个线程。</span><br><span class="line">     * 通常情况下，pthread_exit() 函数是在线程完成工作后无需继续存在时被调用。</span><br><span class="line">     */</span><br><span class="line">    pthread_exit(NULL);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;pthread.h&gt;</span><br><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">#define  NUM_THREADS 5</span><br><span class="line"></span><br><span class="line">void* sayHello(void *args)&#123;</span><br><span class="line">    sleep(1);</span><br><span class="line">    // 对传入的参数进行强制类型转换</span><br><span class="line">    int threadId = *((int *)args);</span><br><span class="line">    cout &lt;&lt; &quot;hello thread id = &quot; &lt;&lt; threadId &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    // 在线程完成工作后无需继续存在时 调用pthread_exit退出线程</span><br><span class="line">    pthread_exit(NULL);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)&#123;</span><br><span class="line"></span><br><span class="line">    pthread_t threads[NUM_THREADS];</span><br><span class="line">    pthread_attr_t attr;</span><br><span class="line">    void *status;</span><br><span class="line"></span><br><span class="line">    // 初始化并设置线程为可连接的（joinable）</span><br><span class="line">    pthread_attr_init(&amp;attr);</span><br><span class="line">    pthread_attr_setdetachstate(&amp;attr, PTHREAD_CREATE_JOINABLE);</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i&lt; NUM_THREADS; i++)&#123;</span><br><span class="line">        cout &lt;&lt; &quot;for create thread = &quot; &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">        int thread = pthread_create(&amp;threads[i], NULL, sayHello, (void *)&amp;i);</span><br><span class="line">        if (thread)&#123;</span><br><span class="line">            cout &lt;&lt; &quot;for create thread error = &quot; &lt;&lt; thread &lt;&lt; endl;</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 删除属性</span><br><span class="line">    pthread_attr_destroy(&amp;attr);</span><br><span class="line">    for (int i = 0 ; i&lt; NUM_THREADS; i++)&#123;</span><br><span class="line">        /*</span><br><span class="line">         * pthread_join() 子程序阻碍调用程序，直到指定的 threadid 线程终止为止。</span><br><span class="line">         * 当创建一个线程时，它的某个属性会定义它是否是可连接的（joinable）或可分离的（detached）。</span><br><span class="line">         * 只有创建时定义为可连接的线程才可以被连接。如果线程创建时被定义为可分离的，则它永远也不能被连接。</span><br><span class="line">         * 使用 pthread_join() 函数来等待线程的完成</span><br><span class="line">         */</span><br><span class="line">        int thread = pthread_join(threads[i], &amp;status);</span><br><span class="line">        if (thread)&#123;</span><br><span class="line">            cout &lt;&lt; &quot;error unable join = &quot; &lt;&lt; thread &lt;&lt; endl;</span><br><span class="line">            exit(-1);</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; &quot;for completed thread = &quot; &lt;&lt; i;</span><br><span class="line">        cout &lt;&lt; &quot; exiting with status = &quot; &lt;&lt; status &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;main completed&quot; &lt;&lt; endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="CGI"><a href="#CGI" class="headerlink" title="CGI"></a>CGI</h2><p>未整理</p>
+<h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><p>C++ 标准库包含了所有的 C 标准库，为了支持类型安全，做了一定的添加和修改。</p>
+<h3 id="标准函数库"><a href="#标准函数库" class="headerlink" title="标准函数库"></a>标准函数库</h3><p>这个库是由通用的、独立的、不属于任何类的函数组成的。函数库继承自 C 语言。</p>
+<ul>
+<li>输入/输出 I/O</li>
+<li>字符串和字符处理</li>
+<li>数学</li>
+<li>时间、日期和本地化</li>
+<li>动态分配</li>
+<li>其他</li>
+<li>宽字符函数</li>
+</ul>
+<h3 id="面向对象类库"><a href="#面向对象类库" class="headerlink" title="面向对象类库"></a>面向对象类库</h3><p>这个库是类及其相关函数的集合。</p>
+<ul>
+<li>标准的 C++ I/O 类</li>
+<li>String 类</li>
+<li>数值类</li>
+<li>STL 容器类</li>
+<li>STL 算法</li>
+<li>STL 函数对象</li>
+<li>STL 迭代器</li>
+<li>STL 分配器</li>
+<li>本地化库</li>
+<li>异常处理类</li>
+<li>杂项支持库</li>
+</ul>
+<h1 id="个人补充"><a href="#个人补充" class="headerlink" title="个人补充"></a>个人补充</h1><h2 id="gt-和"><a href="#gt-和" class="headerlink" title="-&gt; 和 ."></a><code>-&gt;</code> 和 <code>.</code></h2><p><code>-&gt;</code> 前面是指针，<code>.</code> 前面是变量</p>
+<h2 id="域运算符"><a href="#域运算符" class="headerlink" title="域运算符 ::"></a>域运算符 <code>::</code></h2><ul>
+<li>不能把静态成员放置在类的定义中，但是可以在类的外部通过使用 <code>范围解析运算符 ::</code> 来重新声明静态变量从而对它进行初始化，</li>
+<li>成员函数可以定义在类定义内部，或者在类外单独使用 <code>范围解析运算符 :: </code> 来定义</li>
+<li>如果有个局部变量与全局变量同名 <code>::a</code> 可以使用全局变量</li>
+<li><code>::</code> 只能访问静态成员函数</li>
+<li><code>std::cout</code> 表示 cout 是在 std 中的变量</li>
+<li><code>using std::cout</code> 只使用 std 命名空间中的 cout 部分 std 命名空间中的其他项目仍然需要加上命名空间名称作为前缀，如 <code>std::endl</code></li>
+<li><code>::</code> 左边一定是类名/命名空间，右边一定是变量名/函数名，左侧没有东西的时候，代表右侧的函数/变量是全局的</li>
+</ul>
+<h2 id="指针-和-amp-引用"><a href="#指针-和-amp-引用" class="headerlink" title="*指针 和 &amp;引用"></a><code>*</code>指针 和 <code>&amp;</code>引用</h2><ul>
+<li><code>&amp;</code> 在定义变量的时候是引用，起标识作用，如 <code>int &amp;a = b;</code> a为b的一个引用，<br>引用声明完毕后，相当于目标变量名有两个名称，即该目标原名称和引用名。<br>声明一个引用，不是新定义了一个变量，它本身不是一种数据类型，因此引用本身不占存储单元，系统也不给引用分配存储单元。<br>不能建立数组的引用</li>
+<li><code>&amp;</code> 在表达式中为取地址，你的地址可以是任何类型 如 <code>int *a = &amp;b;</code> a为指向b整型的一个指针</li>
+<li><code>*</code> 是指针，是取地址的内容</li>
+</ul>
+<h2 id="include-quot-quot-和-include-lt-gt"><a href="#include-quot-quot-和-include-lt-gt" class="headerlink" title="include &quot;&quot; 和 include &lt;&gt;"></a><code>include &quot;&quot;</code> 和 <code>include &lt;&gt;</code></h2><p>引号会先在程序所在的路径里找(自定义的库函数)<br>尖括号是从系统的头文件开始找(标准库函数)</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/">C++ 总结</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 史彦超 的个人博客">史彦超</a></p>
+  <p><span>发布时间:</span>2016年10月11日 - 22:10</p>
+  <p><span>最后更新:</span>2021年07月20日 - 16:07</p>
+  <p><span>原始链接:</span><a href="/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/" title="C++ 总结">https://doingself.github.io/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://doingself.github.io/2016/10/11/2016-10-11-C++%E6%80%BB%E7%BB%93/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/apple-touch-icon-next.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/apple-touch-icon-next.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/apple-touch-icon-next.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E8%AF%AD%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 语法</a>
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/11/2016-10-11-%E6%88%91%E5%96%9C%E6%AC%A2%E7%9A%84%E5%8F%A5%E5%AD%90/" rel="next" title="我喜欢的句子">
+                <i class="fa fa-chevron-left"></i> 我喜欢的句子
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/11/2016-10-11-Vim-%E6%80%BB%E7%BB%93/" rel="prev" title="Vim 总结">
+                Vim 总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">101</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/doingself" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://my.oschina.net/asjoker" target="_blank" title="开源中国"><i class="fa fa-fw fa-globe"></i>开源中国</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/asjoker" target="_blank" title="Weibo"><i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://user.qzone.qq.com/623971951/main" target="_blank" title="QQ"><i class="fa fa-fw fa-globe"></i>QQ</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">C++ 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typedef"><span class="nav-number">1.2.</span> <span class="nav-text">typedef</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">1.3.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">1.4.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-number">1.5.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.6.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD"><span class="nav-number">1.7.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-number">1.8.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.9.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">1.10.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E5%80%BC%E8%B0%83%E7%94%A8"><span class="nav-number">1.10.1.</span> <span class="nav-text">传值调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%B0%83%E7%94%A8"><span class="nav-number">1.10.2.</span> <span class="nav-text">指针调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%B0%83%E7%94%A8"><span class="nav-number">1.10.3.</span> <span class="nav-text">引用调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.11.</span> <span class="nav-text">Lambda 表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-number">1.12.</span> <span class="nav-text">指针 *</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8-amp"><span class="nav-number">1.13.</span> <span class="nav-text">引用 &amp;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">1.14.</span> <span class="nav-text">输入输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%88%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%89"><span class="nav-number">1.15.</span> <span class="nav-text">数据结构（结构体）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.1.1.</span> <span class="nav-text">类的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E3%80%81%E5%A4%9A%E6%80%81"><span class="nav-number">2.1.2.</span> <span class="nav-text">继承、多态</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-number">3.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%B5%81"><span class="nav-number">3.1.</span> <span class="nav-text">文件流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98"><span class="nav-number">3.3.</span> <span class="nav-text">内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4"><span class="nav-number">3.4.</span> <span class="nav-text">命名空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0-1"><span class="nav-number">3.5.1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB-1"><span class="nav-number">3.5.2.</span> <span class="nav-text">类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">3.6.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86-%E6%88%91%E7%9A%84%E7%90%86%E8%A7%A3%E6%98%AFswift%E4%B8%AD%E7%9A%84%E9%80%9A%E7%9F%A5"><span class="nav-number">3.7.</span> <span class="nav-text">信号处理(我的理解是swift中的通知)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.8.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CGI"><span class="nav-number">3.9.</span> <span class="nav-text">CGI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%BA%93"><span class="nav-number">3.10.</span> <span class="nav-text">标准库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E5%87%BD%E6%95%B0%E5%BA%93"><span class="nav-number">3.10.1.</span> <span class="nav-text">标准函数库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%BA%93"><span class="nav-number">3.10.2.</span> <span class="nav-text">面向对象类库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E8%A1%A5%E5%85%85"><span class="nav-number">4.</span> <span class="nav-text">个人补充</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gt-%E5%92%8C"><span class="nav-number">4.1.</span> <span class="nav-text">-&gt; 和 .</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.2.</span> <span class="nav-text">域运算符 ::</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88-%E5%92%8C-amp-%E5%BC%95%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">*指针 和 &amp;引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#include-quot-quot-%E5%92%8C-include-lt-gt"><span class="nav-number">4.4.</span> <span class="nav-text">include &quot;&quot; 和 include &lt;&gt;</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

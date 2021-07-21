@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+
+
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=6.0.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-32x32-next.ico?v=6.0.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '6.0.4',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="pod," />
+
+
+<meta name="description" content="第三方库Texture总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Texture总结">
+<meta property="og:url" content="https://doingself.github.io/2018/12/27/Texture%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="学不可以已">
+<meta property="og:description" content="第三方库Texture总结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/11/23/15fe8a510eed3c91?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="article:published_time" content="2018-12-27T12:33:44.000Z">
+<meta property="article:modified_time" content="2021-07-20T08:26:51.474Z">
+<meta property="article:author" content="史彦超">
+<meta property="article:tag" content="pod">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/11/23/15fe8a510eed3c91?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+
+
+
+
+
+
+  <link rel="canonical" href="https://doingself.github.io/2018/12/27/Texture总结/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Texture总结 | 学不可以已</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学不可以已</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">史彦超的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://doingself.github.io/2018/12/27/Texture%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学不可以已">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Texture总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-27T20:33:44+08:00">2018-12-27</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IOS/" itemprop="url" rel="index"><span itemprop="name">IOS</span></a></span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/IOS/Swift/" itemprop="url" rel="index"><span itemprop="name">Swift</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">第三方库Texture总结</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="TextureGroup-Texture"><a href="#TextureGroup-Texture" class="headerlink" title="TextureGroup/Texture"></a><a target="_blank" rel="noopener" href="https://github.com/TextureGroup/Texture">TextureGroup/Texture</a></h1><p>Texture(AsyncDisplayKit)是一款基于UIKit构建的iOS框架，其目的在于使复杂的界面依然能够保持流畅和响应。<br>Node是Texture的基本单位，ASDisplayNode是对UIVew的抽象对象，而UIView是对CALayer的抽象。<br>node是线程安全的，既可以在后台线程上实例化和配置它们的整个层次结构。<br>UIView和CALayer的大多数属性在Node中亦存在，且命名相同。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/11/23/15fe8a510eed3c91?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="image"><br><a target="_blank" rel="noopener" href="http://texturegroup.org/static/images/node-hierarchy.png">原图地址</a></p>
+<h2 id="Node-容器"><a href="#Node-容器" class="headerlink" title="Node 容器"></a>Node 容器</h2><table>
+<thead>
+<tr>
+<th>Node Containers</th>
+<th>UIKit Equivalent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ASCollectionNode</td>
+<td>UICollectionView</td>
+</tr>
+<tr>
+<td>ASPagerNode</td>
+<td>UIPageViewController</td>
+</tr>
+<tr>
+<td>ASTableNode</td>
+<td>UITableView</td>
+</tr>
+<tr>
+<td>ASViewController</td>
+<td>UIViewController</td>
+</tr>
+<tr>
+<td>ASNavigationController</td>
+<td>UINavigationController</td>
+</tr>
+<tr>
+<td>ASTabBarController</td>
+<td>UITabBarController</td>
+</tr>
+</tbody></table>
+<h3 id="ASViewController"><a href="#ASViewController" class="headerlink" title="ASViewController"></a>ASViewController</h3><h4 id="init"><a href="#init" class="headerlink" title="init"></a>init</h4><p>这个方法在 ASViewController 的生命周期开始时被调用一次，与 UIViewController 的初始化一样，你最好不要在这个方法中访问 self.view 或  self.node.view，因为这样会强制创建 view。 这些操作可以在 -viewDidLoad 中进行，-viewDidLoad 可以执行任何 view 的访问。</p>
+<h4 id="loadView"><a href="#loadView" class="headerlink" title="loadView"></a>loadView</h4><p>我们建议你不要使用这个方法，因为与 -viewDidLoad 相比，它没有什么特别的优势，并且有一些缺点。 但是，只要不将 self.view 属性设置为不同的值，它可以安全的使用。 它的 super 方法会将其封装的 UIViewController 的 view 设置为 ASViewController 的 node.view。</p>
+<h4 id="viewDidLoad"><a href="#viewDidLoad" class="headerlink" title="viewDidLoad"></a>viewDidLoad</h4><p>这个方法在 -loadView 之后被执行，这是 ASViewController 生命周期中，你可以访问 node.view 最早的方法，你可以在这份方法中任意修改 view 和 layer 或添加手势，这个方法在其所属的生命周期中，只会执行一次。</p>
+<p>所以布局代码不应该放在这个方法中，因为当界面重绘时，这里的代码不会被再次调用。UIViewController 中这个方法也是同样的，在这种方法中放置布局代码是一种不太好的做法，即使你的布局不会因为交互发生变化。</p>
+<h4 id="viewWillLayoutSubviews"><a href="#viewWillLayoutSubviews" class="headerlink" title="viewWillLayoutSubviews"></a>viewWillLayoutSubviews</h4><p>这个方法会与节点的 -layout 同时调用，它可能在 ASViewController 的生命周期中被多次调用，当 ASViewController 的节点的边界发生改变，如旋转、分割屏幕、键盘弹出等行为，或者当视图的层次结构发生变化，如子节点添加、删除或改变大小时，这个方法将被调用。</p>
+<p>因为它不经常被调用，但是调用就代表页面需要重绘，因此所有的布局代码最好都放在这个方法中，即使是不直接依赖于 size 的 UI 代码也应放在这里。</p>
+<h4 id="viewWillAppear-viewDidDisappear"><a href="#viewWillAppear-viewDidDisappear" class="headerlink" title="viewWillAppear / viewDidDisappear"></a>viewWillAppear / viewDidDisappear</h4><p>viewWillAppear 在 ASViewController 的节点出现在屏幕上之前被调用，这是节点从屏幕出现的最早时间，viewDidDisappear 在控制器从视图层次结构中移除之后被调用，这是节点从屏幕消失的最早时机，这两个方法提供了一个很好的时机来启动或停止与控制器相关的动画，这也是一个保存和记录用户行为日志的好地方。</p>
+<p>尽管这些方法可能被多次调用，并且是可以执行布局代码的，但是这两个方法不会在所有需要重绘的时候被调用，因此除了特定的动画设置之外，不应该用于执行核心的布局代码。</p>
+<h2 id="Node-Subclass"><a href="#Node-Subclass" class="headerlink" title="Node Subclass"></a>Node Subclass</h2><table>
+<thead>
+<tr>
+<th>Node Subclass</th>
+<th>UIKit Equivalent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ASDisplayNode</td>
+<td>UIView</td>
+</tr>
+<tr>
+<td>ASCellNode</td>
+<td>UITableViewCell / UICollectionViewCell ，可用于容器 ASTableNode、ASCollectionNode和 ASPagerNode</td>
+</tr>
+<tr>
+<td>ASScrollNode</td>
+<td>UIScrollView</td>
+</tr>
+<tr>
+<td>ASEditableTextNode</td>
+<td>UITextView</td>
+</tr>
+<tr>
+<td>ASTextNode</td>
+<td>UILabel</td>
+</tr>
+<tr>
+<td>ASImageNode</td>
+<td>UIImage</td>
+</tr>
+<tr>
+<td>ASNetworkImageNode</td>
+<td>UIImage</td>
+</tr>
+<tr>
+<td>ASMultiplexImageNode</td>
+<td>UIImage</td>
+</tr>
+<tr>
+<td>ASVideoNode</td>
+<td>AVPlayerLayer</td>
+</tr>
+<tr>
+<td>ASVideoPlayerNode</td>
+<td>UIMoviePlayer</td>
+</tr>
+<tr>
+<td>ASControlNode</td>
+<td>UIControl</td>
+</tr>
+<tr>
+<td>ASButtonNode</td>
+<td>UIButton</td>
+</tr>
+<tr>
+<td>ASMapNode</td>
+<td>MKMapView</td>
+</tr>
+</tbody></table>
+<h3 id="ASDisplayNode"><a href="#ASDisplayNode" class="headerlink" title="ASDisplayNode"></a>ASDisplayNode</h3><h4 id="init-1"><a href="#init-1" class="headerlink" title="init"></a>init</h4><p>在使用 initNodeBlocks 时，这个方法会后台线程上被调用。但是，因为没有其他方法会在 init 完成之前运行，所以这个方法不需要加锁。</p>
+<p>需要记住的最重要的一点是，init 方法必须能够在任何队列上调用。最值得注意的是，你永远不应该在节点初始化方法中初始化任何 UIKit 对象，以及调用 node.layer node.view.x 等与view 或 layer 有关的操作，也不应该在这个方法中为节点添加手势，这些事件应该在 didLoad 方法中进行。</p>
+<h4 id="didLoad"><a href="#didLoad" class="headerlink" title="didLoad"></a>didLoad</h4><p>这个方法在概念上类似于 UIViewController 的 -viewDidLoad 方法，当后台视图初始化完成时，它会被调用一次，它保证会在主线程上被调用，是执行任何 UIKit 代码合适的地方，例如添加手势识，更改 view 和 layer，初始化 UIKit 对象。</p>
+<h4 id="layoutSpecThatFits"><a href="#layoutSpecThatFits" class="headerlink" title="layoutSpecThatFits"></a>layoutSpecThatFits</h4><p>该方法定义了节点的布局，并在后台线程上进行了大量的计算。此方法是你声明、创建和修改 ASLayoutSpec 布局描述对象的地方，该对象描述了节点的 size，以及其子节点的 size 和 position，是你放置大部分布局代码的地方。</p>
+<p>ASLayoutSpec 对象直到在此方法中返回前是可变的。 在这之后，这个对象将不可改变，需要注意的是你不需要缓存 ASLayoutSpec  对象以备后用，我们建议你在必要时重新创建布局描述。</p>
+<p>由于它在后台线程上运行，因此你不能在这个方法中调用 node.view 或 node.layer 以及它们的属性。 此外，除非你明确知道自己在做什么，否则不要在此方法中创建其他节点。 另外，重写此方法并不一定需要调用 super 方法。</p>
+<h4 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h4><p>在此方法中调用 super 将，会使用  layoutSpec 对象计算布局，所有子节点都将计算其 size 和 position。</p>
+<h4 id="layout-1"><a href="#layout-1" class="headerlink" title="layout"></a>layout</h4><p>在概念上类似于 UIViewController 的 -viewwilllayoutsubview，这是一个更改 hidden 属性、修改 view 属性、设置背景颜色的好地方。你可以在 -layoutspec: 方法中设定背景颜色，但这可能会存在时序问题。如果你需要使用原生的 UIView，可以在这里设置它们的 frame，不管怎样，你始终可以使用 -initWithViewBlock: 创建节点，并在其他地方的后台线程中进行调整。</p>
+<p>这个方法在主线程上被调用，如果你使用的是 ASLayoutSpec，那么你不应该过多地依赖这个方法，因为在主线程上进行布局是非常可取的，需要这个方法的子类小于 1/10。</p>
+<p>使用 -layout 的一个重要用途是你需要子节点的 size 是精确的</p>
+<p>如果你希望在 ASViewController 中得到相同的效果，那么你可以在 -viewWillLayoutSubviews 中做同样的事情，不过如果你的节点通过 initWithNode: 进行实例化，它会自动做到这一点。</p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><ul>
+<li>布局规则 <code>ASLayoutSpec</code></li>
+<li>布局元素 <code>ASLayoutElement</code></li>
+<li>布局调试 <code>Layout Debugging</code><br>在任何 ASDisplayNode 或 ASLayoutSpec 上调用 -asciiArtString 都会返回该对象及其子项的字符图。 你也可以在任何 Node 或 layoutSpec 中设置 .debugName，这样也将包含字符图</li>
+</ul>
+<p>缺少初始固有大小的 Node (ASVideoNode / ASVideoPlayerNode / ASNetworkImageNode / ASEditableTextNode) 必须使用 ASRatioLayoutSpec(比例布局规则)、ASAbsoluteLayoutSpec(绝对布局规则) 或样式对象的 .size 属性为它们设置初始大小。</p>
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ASWrapperLayoutSpec</td>
+<td>填充布局</td>
+</tr>
+<tr>
+<td>ASStackLayoutSpec</td>
+<td>盒子布局</td>
+</tr>
+<tr>
+<td>ASInsetLayoutSpec</td>
+<td>插入布局</td>
+</tr>
+<tr>
+<td>ASOverlayLayoutSpec</td>
+<td>覆盖布局</td>
+</tr>
+<tr>
+<td>ASBackgroundLayoutSpec</td>
+<td>背景布局</td>
+</tr>
+<tr>
+<td>ASCenterLayoutSpec</td>
+<td>中心布局</td>
+</tr>
+<tr>
+<td>ASRatioLayoutSpec</td>
+<td>比例布局</td>
+</tr>
+<tr>
+<td>ASRelativeLayoutSpec</td>
+<td>顶点布局</td>
+</tr>
+<tr>
+<td>ASAbsoluteLayoutSpec</td>
+<td>绝对布局</td>
+</tr>
+</tbody></table>
+<h3 id="ASStackLayoutSpec"><a href="#ASStackLayoutSpec" class="headerlink" title="ASStackLayoutSpec"></a>ASStackLayoutSpec</h3><p>direction：主轴的方向，有两个可选值：</p>
+<ul>
+<li>纵向：ASStackLayoutDirectionVertical</li>
+<li>横向：ASStackLayoutDirectionHorizontal</li>
+</ul>
+<p>spacing: 主轴上视图排列的间距，比如有四个视图，那么它们之间的存在三个间距值都应该是spacing</p>
+<p>justifyContent: 主轴上的排列方式，有五个可选值：</p>
+<ul>
+<li>ASStackLayoutJustifyContentStart 从前往后排列</li>
+<li>ASStackLayoutJustifyContentCenter 居中排列</li>
+<li>ASStackLayoutJustifyContentEnd 从后往前排列</li>
+<li>ASStackLayoutJustifyContentSpaceBetween 间隔排列，两端无间隔</li>
+<li>ASStackLayoutJustifyContentSpaceAround 间隔排列，两端有间隔</li>
+</ul>
+<p>alignItems: 交叉轴上的排列方式，有五个可选值：</p>
+<ul>
+<li>ASStackLayoutAlignItemsStart 从前往后排列</li>
+<li>ASStackLayoutAlignItemsEnd 从后往前排列</li>
+<li>ASStackLayoutAlignItemsCenter 居中排列</li>
+<li>ASStackLayoutAlignItemsStretch 拉伸排列</li>
+<li>ASStackLayoutAlignItemsBaselineFirst 以第一个文字元素基线排列（主轴是横向才可用）</li>
+<li>ASStackLayoutAlignItemsBaselineLast 以最后一个文字元素基线排列（主轴是横向才可用）</li>
+</ul>
+<p>children: 包含的视图。数组内元素顺序同样代表着布局时排列的顺序，所以需要注意</p>
+<p>主轴的方向设置尤为重要，如果主轴设置的是 ASStackLayoutDirectionVertical, 那么 justifyContent 各个参数的意义就是：</p>
+<ul>
+<li>ASStackLayoutJustifyContentStart 从上往下排列</li>
+<li>ASStackLayoutJustifyContentCenter 居中排列</li>
+<li>ASStackLayoutJustifyContentEnd 从下往上排列</li>
+<li>ASStackLayoutJustifyContentSpaceBetween 间隔排列，两端无间隔</li>
+<li>ASStackLayoutJustifyContentSpaceAround 间隔排列，两端有间隔</li>
+</ul>
+<p>alignItems 就是：</p>
+<ul>
+<li>ASStackLayoutAlignItemsStart 从左往右排列</li>
+<li>ASStackLayoutAlignItemsEnd 从右往左排列</li>
+<li>ASStackLayoutAlignItemsCenter 居中排列</li>
+<li>ASStackLayoutAlignItemsStretch 拉伸排列</li>
+<li>ASStackLayoutAlignItemsBaselineFirst 无效</li>
+<li>ASStackLayoutAlignItemsBaselineLast 无效</li>
+</ul>
+<p><strong>未完待续…</strong></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="http://texturegroup.org/docs/node-overview.html">http://texturegroup.org/docs/node-overview.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5a16acf56fb9a04509092ce5">https://juejin.im/post/5a16acf56fb9a04509092ce5</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/5a1be41351882561a20a32e9">https://juejin.im/post/5a1be41351882561a20a32e9</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000007991853#articleHeader7">https://segmentfault.com/a/1190000007991853#articleHeader7</a></li>
+<li><a target="_blank" rel="noopener" href="https://bawn.github.io/2017/12/Texture-Layout/">https://bawn.github.io/2017/12/Texture-Layout/</a></li>
+</ul>
+<h3 id="相关阅读"><a href="#相关阅读" class="headerlink" title="相关阅读"></a>相关阅读</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://draveness.me/layout-performance">https://draveness.me/layout-performance</a></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/12/27/Texture%E6%80%BB%E7%BB%93/">Texture总结</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 史彦超 的个人博客">史彦超</a></p>
+  <p><span>发布时间:</span>2018年12月27日 - 20:12</p>
+  <p><span>最后更新:</span>2021年07月20日 - 16:07</p>
+  <p><span>原始链接:</span><a href="/2018/12/27/Texture%E6%80%BB%E7%BB%93/" title="Texture总结">https://doingself.github.io/2018/12/27/Texture%E6%80%BB%E7%BB%93/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://doingself.github.io/2018/12/27/Texture%E6%80%BB%E7%BB%93/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/apple-touch-icon-next.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/apple-touch-icon-next.png" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/apple-touch-icon-next.png" alt=" 比特币"/>
+        <p>比特币</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/pod/" rel="tag"><i class="fa fa-tag"></i> pod</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/14/Moya-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/" rel="next" title="Moya 简单使用">
+                <i class="fa fa-chevron-left"></i> Moya 简单使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/23/swift5-%E7%94%BB%E5%9B%BE/" rel="prev" title="swift5 画图">
+                swift5 画图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpeg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">101</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/doingself" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://my.oschina.net/asjoker" target="_blank" title="开源中国"><i class="fa fa-fw fa-globe"></i>开源中国</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/asjoker" target="_blank" title="Weibo"><i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://user.qzone.qq.com/623971951/main" target="_blank" title="QQ"><i class="fa fa-fw fa-globe"></i>QQ</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TextureGroup-Texture"><span class="nav-number">1.</span> <span class="nav-text">TextureGroup&#x2F;Texture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-%E5%AE%B9%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">Node 容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASViewController"><span class="nav-number">1.1.1.</span> <span class="nav-text">ASViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loadView"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">loadView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewDidLoad"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">viewDidLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillLayoutSubviews"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">viewWillLayoutSubviews</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#viewWillAppear-viewDidDisappear"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">viewWillAppear &#x2F; viewDidDisappear</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-Subclass"><span class="nav-number">1.2.</span> <span class="nav-text">Node Subclass</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASDisplayNode"><span class="nav-number">1.2.1.</span> <span class="nav-text">ASDisplayNode</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#init-1"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">init</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#didLoad"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">didLoad</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layoutSpecThatFits"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">layoutSpecThatFits</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">layout</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#layout-1"><span class="nav-number">1.2.1.5.</span> <span class="nav-text">layout</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B1%80"><span class="nav-number">1.3.</span> <span class="nav-text">布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ASStackLayoutSpec"><span class="nav-number">1.3.1.</span> <span class="nav-text">ASStackLayoutSpec</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.3.2.</span> <span class="nav-text">参考资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%98%85%E8%AF%BB"><span class="nav-number">1.3.3.</span> <span class="nav-text">相关阅读</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.0.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
