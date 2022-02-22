@@ -77,3 +77,47 @@ localhost: l+TGOykev0Nt
 - 【Mysql的bin目录】\mysql –u用户名 –p密码 –D数据库<【sql脚本文件路径全名】
 - 切换到mysql的bin文件所在的目录 `mysql -uroot -p123456 -Dtest<E:\test.sql` //mysql -u账号 -p密码 -D数据库名 < sql文件绝对路径
 - 进入 MySQL 控制台, 执行  `source C:\test.sql`
+
+
+## 开启MySQL远程访问权限 允许远程连接
+
+1. use mysql;
+2. select host, user, authentication_string from user;
+
+原始数据
+
+```
+localhost	root			\*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9
+localhost	mysql.session	\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+localhost	mysql.sys		\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+```
+
+### 授权
+
+授权后 `host` 为 `%`, 使用 `pass1234` 登录
+
+1. use mysql;
+2. GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'pass1234' WITH GRANT OPTION;
+3. flush privileges;
+4. select host, user, authentication_string from user;
+
+```
+localhost	root			\*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9
+localhost	mysql.session	\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+localhost	mysql.sys		\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+%			root			\*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19
+```
+
+### 该表
+
+1. use mysql;
+2. update user set host = '%' where user = 'root';
+3. select host, user, authentication_string from user;
+
+```
+localhost	root			\*6BB4837EB74329105EE4568DDA7DC67ED2CA2AD9
+localhost	mysql.session	\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+localhost	mysql.sys		\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
+%			root			\*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19
+```
+
