@@ -74,8 +74,7 @@ localhost: l+TGOykev0Nt
 
 ### Window
 
-- 【Mysql的bin目录】\mysql –u用户名 –p密码 –D数据库<【sql脚本文件路径全名】
-- 切换到mysql的bin文件所在的目录 `mysql -uroot -p123456 -Dtest<E:\test.sql` //mysql -u账号 -p密码 -D数据库名 < sql文件绝对路径
+- 切换到mysql的bin文件所在的目录 `mysql -uroot -p123456 -Dtest<E:\test.sql` // mysql -u账号 -p密码 -D数据库名 < sql文件绝对路径
 - 进入 MySQL 控制台, 执行  `source C:\test.sql`
 
 
@@ -108,7 +107,7 @@ localhost	mysql.sys		\*THISISNOTAVALIDPASSWORDTHATCANBEUSEDHERE
 %			root			\*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19
 ```
 
-### 该表
+### 改表
 
 1. use mysql;
 2. update user set host = '%' where user = 'root';
