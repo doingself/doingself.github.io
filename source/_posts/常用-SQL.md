@@ -1,3 +1,15 @@
+---
+title: 常用 Sql 总结
+date: 2022-01-25 10:44:38
+categories:
+	- SQL
+tags:
+	- MySql
+description: "常用 Sql 总结"
+copyright: true
+---
+
+
 # MySql
 
 -- 表所有列, 用`,`分割

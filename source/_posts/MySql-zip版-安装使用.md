@@ -1,3 +1,13 @@
+---
+title: MySql zip 安装使用
+date: 2022-01-25 10:44:38
+categories:
+	- 开发工具
+tags:
+	- MySql
+description: "MySql zip 安装使用"
+copyright: true
+---
 
 # MySql zip 安装使用
 

@@ -1,3 +1,13 @@
+---
+title: JDK 安装配置
+date: 2022-01-25 10:44:38
+categories:
+	- 开发工具
+tags:
+	- Java
+description: "JDK 安装配置"
+copyright: true
+---
 
 # JDK 安装配置
 
